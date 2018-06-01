@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <tb_user TXT_NAME="Joana Darc" TXT_CPF="142.551.764-23" TXT_EMAIL="joanadarc@gmail.com" TXT_PASSWORD="joan@d@rC"/>
+    <tb_user TXT_NAME="Fulano" TXT_CPF="441.551.764-23" TXT_EMAIL="joarc@gmail.com" TXT_PASSWORD="senha%%3F"/>
+    <tb_user TXT_NAME="Tioziho" TXT_CPF="482.434.714-23" TXT_EMAIL="tiotio@gmail.com" TXT_PASSWORD="joanD@d@rC"/>
+    
+</dataset>

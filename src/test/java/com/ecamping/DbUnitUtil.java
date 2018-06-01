@@ -15,7 +15,7 @@ import org.dbunit.operation.DatabaseOperation;
 
 public class DbUnitUtil {
 
-/*    private static final String XML_FILE = "/dbunit/dataset.xml";
+   private static final String XML_FILE = "/dbunit/dataset.xml";
 
     @SuppressWarnings("UseSpecificCatch")
     public static void inserirDados() {
@@ -24,7 +24,7 @@ public class DbUnitUtil {
         try {
             //mudar conection (root - ecamping)
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/PERSONALTECHjdbc:mysql://localhost:3306/ecamping_db?zeroDateTimeBehavior=convertToNull", "root", "root");
+                    "jdbc:mysql://localhost:3306/ecamping_db?zeroDateTimeBehavior=convertToNull", "root", "root");
             db_conn = new DatabaseConnection(conn, "ecamping_db"); // não e nome do PU é o nome do DATABASE
             DatabaseConfig dbConfig = db_conn.getConfig();
             dbConfig.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
@@ -49,5 +49,5 @@ public class DbUnitUtil {
                 throw new RuntimeException(ex.getMessage(), ex);
             }
         }
-    }*/
+    }
 }
