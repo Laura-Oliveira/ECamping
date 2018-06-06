@@ -40,10 +40,10 @@ public class BookingTest {
     @BeforeClass
     public static void setUpClass() {
         logger = Logger.getGlobal();
-        //logger.setLevel(Level.INFO);
+        logger.setLevel(Level.INFO);
         logger.setLevel(Level.SEVERE);
         emf = Persistence.createEntityManagerFactory("ecampingPersistence");
-        //DbUnitUtil.inserirDados();
+        DbUnitUtil.inserirDados();
     }
 
     @AfterClass
@@ -98,7 +98,6 @@ public class BookingTest {
         camping.setName("Camping 01");
         camping.setPhone("3465-4871");
         camping.setAddress(endereco);
-        camping.setUser(user);
 
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 2018);
@@ -138,7 +137,6 @@ public class BookingTest {
         camping.setName("Camping 01");
         camping.setPhone("3465-4871");
         camping.setAddress(endereco);
-        camping.setUser(u1);
 
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 2018);
@@ -178,7 +176,6 @@ public class BookingTest {
         camping.setName("Camping 02");
         camping.setPhone("3451-5120");
         camping.setAddress(endereco);
-        camping.setUser(user);
 
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 2018);

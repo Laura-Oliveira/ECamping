@@ -43,13 +43,7 @@ import org.hibernate.validator.constraints.br.CPF;
                     name = "User.PorNome",
                     query = "SELECT u FROM User u WHERE u.name LIKE ?1 ORDER BY u.id"
                     
-            ),            
-
-            @NamedQuery(
-                    name = "User.PorCamping",
-                    query = "SELECT u FROM User u WHERE EXISTS "
-                            + "(SELECT c FROM Camping c WHERE c.user = u)"
-            )
+            )            
         }
 )
 
@@ -94,10 +88,6 @@ public class User implements Serializable {
     @Pattern(regexp = "((?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})", message="{invalid.password})")
     @Column(name = "TXT_PASSWORD", nullable = false, length = 20)
     private String password;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
-            targetEntity = Camping.class, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<Camping> camping;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL,
             targetEntity = Booking.class, orphanRemoval = true, fetch = FetchType.LAZY)
@@ -151,13 +141,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public List<Camping> getCamping() {
-        return camping;
-    }
-
-    public void setCamping(List<Camping> camping) {
-        this.camping = camping;
-    }
 
     public List<Booking> getBooking() {
         return booking;

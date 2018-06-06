@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
     <tb_user TXT_NAME="Joana Darc" TXT_CPF="142.551.764-23" TXT_EMAIL="joanadarc@gmail.com" TXT_PASSWORD="joan@d@rC"/>
-    <tb_user TXT_NAME="Fulano" TXT_CPF="441.551.764-23" TXT_EMAIL="joarc@gmail.com" TXT_PASSWORD="senha%%3F"/>
+    <tb_user TXT_NAME="Fulano" TXT_CPF="441.551.764-23" TXT_EMAIL="fulano@gmail.com" TXT_PASSWORD="senha%%3F"/>
     <tb_user TXT_NAME="Tioziho" TXT_CPF="482.434.714-23" TXT_EMAIL="tiotio@gmail.com" TXT_PASSWORD="joanD@d@rC"/>
+   <tb_user TXT_NAME="Luciana" TXT_CPF="106.796.944-63" TXT_EMAIL="luciana@gmail.com" TXT_PASSWORD="Senh@_4"/>
+   <tb_user TXT_NAME="Eduardo" TXT_CPF="111.222.333-44" TXT_EMAIL="eduardo@gmail.com" TXT_PASSWORD="Senh@_5"/>
     
+
+   <tb_address TXT_CEP = "51.021-190" TXT_ESTADO = "Pernambuco" TXT_CIDADE = "Recife" TXT_RUA = "Rua de Testes" TXT_BAIRRO = "Qualquer um" TXT_NUMERO = "110"/>
+   <tb_address TXT_CEP = "98.234-943" TXT_ESTADO = "Pernambuco" TXT_CIDADE = "Recife" TXT_RUA = "Rua mal assombrada" TXT_BAIRRO = "Piedade" TXT_NUMERO = "190"/>
+   <tb_address TXT_CEP = "45.321-842" TXT_ESTADO = "São Paulo" TXT_CIDADE = "Mogi das Cruzes" TXT_RUA = "Rua Antonio Maximo" TXT_BAIRRO = "Sá e Souza" TXT_NUMERO = "144"/>
+   <tb_address TXT_CEP = "74.324-190" TXT_ESTADO = "Pernambuco" TXT_CIDADE = "Cidade 4" TXT_RUA = "Rua da Cidade 4" TXT_BAIRRO = "Bairro" TXT_NUMERO = "345"/>
+   
+   <tb_camping TXT_NAME ="Camping 01" TXT_INFO = "informações do camping 01" PHONE = "(81) 8199558-3756" ID_ADDRESS = "1" />
+   <tb_camping TXT_NAME ="Camping 02" TXT_INFO = "muitas informações adicionar do camping 02" PHONE = "(81) 99456-9035" ID_ADDRESS = "2" />
+   <tb_camping TXT_NAME ="Camping 03" TXT_INFO = "quase nada" PHONE = "(11) 99165-8734" ID_ADDRESS = "3"/>
+   <tb_camping TXT_NAME ="Camping 04" TXT_INFO = "apenas teste" PHONE = "(81) 99462-7042" ID_ADDRESS = "4"/>
+
+   <tb_booking DT_BOOKINGDATE = "2017-04-23" ID_CAMPING = "2" ID_USER = "5" TXT_TENT = "DUPLEX"/>	
+   <tb_booking DT_BOOKINGDATE = "2016-08-10" ID_CAMPING = "2" ID_USER = "1" TXT_TENT = "DUPLEX"/>	
+   <tb_booking DT_BOOKINGDATE = "2018-05-08" ID_CAMPING = "4" ID_USER = "2" TXT_TENT = "DUPLEX"/>
+   
+
 </dataset>

@@ -41,7 +41,7 @@ public class CampingTest {
         logger.setLevel(Level.INFO);
         logger.setLevel(Level.SEVERE);
         emf = Persistence.createEntityManagerFactory("ecampingPersistence");
-        //DbUnitUtil.inserirDados();
+        DbUnitUtil.inserirDados();
     }
 
     @AfterClass
@@ -96,7 +96,6 @@ public class CampingTest {
         camping.setName("Camping 01");
         camping.setPhone("(81)3465-4871");
         camping.setInfo("Informações.");
-        camping.setUser(u1);
         camping.setAddress(endereco);
 
         em.persist(camping);

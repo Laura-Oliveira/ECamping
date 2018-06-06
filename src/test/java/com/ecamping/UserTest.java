@@ -40,7 +40,7 @@ public class UserTest {
     @BeforeClass
     public static void setUpClass() {
         logger = Logger.getGlobal();
-        //logger.setLevel(Level.INFO);
+        logger.setLevel(Level.INFO);
         logger.setLevel(Level.SEVERE);
         emf = Persistence.createEntityManagerFactory("ecampingPersistence");
         DbUnitUtil.inserirDados();

@@ -72,8 +72,8 @@ public class Camping implements Serializable
     
     @NotBlank
     @Pattern (regexp = " ^(\\([0-9]{2}\\))\\s([9]{1})?([0-9]{4})-([0-9]{4})$", message="{invalid.phone}")
-    @Max(value=11)
-    @Column(name="PHONE", nullable = false, length = 11)
+    @Max(value=17)
+    @Column(name="PHONE", nullable = false, length = 17)
     private String phone;
     
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
@@ -81,9 +81,6 @@ public class Camping implements Serializable
     @JoinColumn(name = "ID_ADDRESS", referencedColumnName = "ID")
     private Address address; 
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name="ID_USER", referencedColumnName = "ID", nullable = false)
-    private User user;
     
     @OneToMany(mappedBy="camping", cascade = CascadeType.ALL, targetEntity = Booking.class,
             orphanRemoval = true, fetch = FetchType.LAZY)
@@ -135,14 +132,6 @@ public class Camping implements Serializable
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public List<Booking> getBooking() {

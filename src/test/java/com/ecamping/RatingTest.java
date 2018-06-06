@@ -36,10 +36,10 @@ public class RatingTest {
     @BeforeClass
     public static void setUpClass() {
         logger = Logger.getGlobal();
-        //logger.setLevel(Level.INFO);
+        logger.setLevel(Level.INFO);
         logger.setLevel(Level.SEVERE);
         emf = Persistence.createEntityManagerFactory("ecampingPersistence");
-        //DbUnitUtil.inserirDados();
+        DbUnitUtil.inserirDados();
     }
 
     @AfterClass
@@ -77,37 +77,7 @@ public class RatingTest {
     //TEST CLASSES
     @Test
     public void addRating(){
-//        User user1 = new User();
-//        user1.setName("Joselito Cunha");
-//        user1.setCpf("683.075.154-45");
-//        user1.setEmail("josecunha@gmail.com");
-//        user1.setPassword("joselito$lito$");
-//        
-//        User user2 = new User();
-//        user2.setName("Aura Magda");
-//        user2.setCpf("888.125.104-85");
-//        user2.setEmail("aura@gmail.com");
-//        user2.setPassword("magdaLit@");
-//        
-//        User user3 = new User();
-//        user2.setName("Joana Darc");
-//        user2.setCpf("864.134.104-25");
-//        user2.setEmail("jdarc@gmail.com");
-//        user2.setPassword("guerr@%gue@@");
-//        
-//        Address endereco = new Address();
-//        endereco.setCidade("Bonito");
-//        endereco.setEstado("Pernambuco");
-//        endereco.setBairro("Bonito");
-//        endereco.setCep("54061-170");
-//        endereco.setNumero("67");
-//        endereco.setRua("Rua do Lago");
-//        
-//        Camping camping = new Camping();
-//        camping.setInfo("O local possui área de trilhas e cachoeiras para os campistas desfrutarem.");
-//        camping.setName("Camping do Luizão");
-//        camping.setPhone("81 3333-3333");
-//        camping.setAddress(endereco);
+
         User user = em.find(User.class, (long)1);
         Camping camping = em.find(Camping.class, (long)1);
         
@@ -138,22 +108,6 @@ public class RatingTest {
         
         em.flush();
         assertNotNull(camping.getRating());
-        
-//        Rating rating2 = new Rating();
-//        rating2.setValue(2);
-//        rating2.setUser(user2);
-//        rating2.setCamping(camping);
-//        
-//        Rating rating3 = new Rating();
-//        rating3.setValue(5);
-//        rating3.setUser(user3);
-//        rating3.setCamping(camping);
-//        
-//        em.merge(camping);
-//        Camping campingNew = new Camping();
-//        camping.addRating(rating1);
-//        camping.addRating(rating2);
-//        camping.addRating(rating3);
 
         
         
