@@ -71,7 +71,7 @@ public class Camping implements Serializable
     private String info;
     
     @NotBlank
-    @Pattern (regexp = " ^(\\([0-9]{2}\\))\\s([9]{1})?([0-9]{4})-([0-9]{4})$", message="{invalid.phone}")
+    @Pattern (regexp = "^(\\([0-9]{2}\\))\\s([9]{1})?([0-9]{4})-([0-9]{4})$", message="{invalid.phone}")
     @Max(value=17)
     @Column(name="PHONE", nullable = false, length = 17)
     private String phone;
