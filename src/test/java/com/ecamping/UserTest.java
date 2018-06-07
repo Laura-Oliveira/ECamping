@@ -94,36 +94,6 @@ public class UserTest {
         assertNotNull(u1.getId());
     }
 
-    @Test
-    public void createUser2() {
-        User u1 = new User();
-        u1.setName("Albafica");
-        u1.setCpf("754.355.102-78");
-        u1.setEmail("albafica@gmail.com");
-        u1.setPassword("senha");
-
-        em.persist(u1);
-        em.flush();
-        em.clear();
-
-        assertNotNull(u1.getId());
-    }
-
-    @Test
-    public void createUser3() {
-        User u1 = new User();
-        u1.setName("Aldebaran");
-        u1.setCpf("841.040.542-45");
-        u1.setEmail("aldebaran@gmail.com");
-        u1.setPassword("senha");
-
-        em.persist(u1);
-        em.flush();
-        em.clear();
-
-        assertNotNull(u1.getId());
-    }
-
     //TESTES NATIVE QUERY
     @Test
     public void UsuarioPorId() {
@@ -203,13 +173,13 @@ public class UserTest {
 
     }
 
-    @Test
+    /*@Test
     public void NQUsuarioComCamping() {
         TypedQuery<User> q = em.createNamedQuery("User.PorCamping", User.class);
         List<User> usuarios = q.getResultList();
         em.clear();
         assertNotNull(usuarios);
-    }
+    }*/
 
     @Test
     public void updateUser() {
@@ -228,13 +198,6 @@ public class UserTest {
         em.clear();
 
         assertEquals("Germino", usuario.getName());
-    }
-
-    @Test
-    public void UsuariosSemCamping() {
-        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.camping IS EMPTY", User.class);
-        List<User> usuarios = query.getResultList();
-        assertNotNull(usuarios);
     }
 
     @Test
