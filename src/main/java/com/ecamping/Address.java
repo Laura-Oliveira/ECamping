@@ -44,7 +44,7 @@ public class Address implements Serializable {
     
     @NotNull
     @Pattern(regexp = "[0-90]{2}.[0-9]{3}-[0-9]{3}", message = "{invalid.cep}")
-    @Column(name= "TXT_CEP", nullable = false, length = 200)
+    @Column(name= "TXT_CEP", nullable = false, length = 10)
     private String cep;
     
     @NotNull

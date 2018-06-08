@@ -1,13 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: com.ecamping.RatingTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 15.57 sec <<< FAILURE!
-addRating(com.ecamping.RatingTest)  Time elapsed: 0.019 sec  <<< ERROR!
-javax.validation.ValidationException: HV000183: Unable to load 'javax.el.ExpressionFactory'. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
-	at org.hibernate.validator.internal.engine.ValidatorFactoryImpl.createValidator(ValidatorFactoryImpl.java:339)
-	at org.hibernate.validator.internal.engine.ValidatorContextImpl.getValidator(ValidatorContextImpl.java:122)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.getValidator(BeanValidationListener.java:100)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:84)
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 17.936 sec <<< FAILURE!
+addRating(com.ecamping.RatingTest)  Time elapsed: 0.034 sec  <<< ERROR!
+javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'preUpdate'. Please refer to embedded ConstraintViolations for details.
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.preUpdate(BeanValidationListener.java:72)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:721)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:691)
@@ -51,7 +48,7 @@ javax.validation.ValidationException: HV000183: Unable to load 'javax.el.Express
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-addRating(com.ecamping.RatingTest)  Time elapsed: 0.019 sec  <<< ERROR!
+addRating(com.ecamping.RatingTest)  Time elapsed: 0.034 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)

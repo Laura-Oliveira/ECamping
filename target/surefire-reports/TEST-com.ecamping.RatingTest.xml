@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.ecamping.RatingTest" time="15.569" errors="2" skipped="0">
+<testsuite tests="2" failures="0" name="com.ecamping.RatingTest" time="17.936" errors="2" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/isabella/jdk1.8.0_171/jre/lib/amd64"/>
@@ -60,12 +60,9 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.RatingTest" name="addRating" time="0.019">
-    <error message="HV000183: Unable to load &apos;javax.el.ExpressionFactory&apos;. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead" type="javax.validation.ValidationException">javax.validation.ValidationException: HV000183: Unable to load &apos;javax.el.ExpressionFactory&apos;. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
-	at org.hibernate.validator.internal.engine.ValidatorFactoryImpl.createValidator(ValidatorFactoryImpl.java:339)
-	at org.hibernate.validator.internal.engine.ValidatorContextImpl.getValidator(ValidatorContextImpl.java:122)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.getValidator(BeanValidationListener.java:100)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:84)
+  <testcase classname="com.ecamping.RatingTest" name="addRating" time="0.034">
+    <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.preUpdate(BeanValidationListener.java:72)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:721)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:691)
@@ -110,21 +107,21 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Info]: connection: 2018-06-06 22:44:23.747--ServerSession(1141500277)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence logout successful
-[EL Info]: 2018-06-06 22:44:23.812--ServerSession(58890945)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-[EL Warning]: metadata: 2018-06-06 22:44:23.825--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [address] for the entity class [class com.ecamping.Camping] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.825--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.825--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.826--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.826--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.827--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-06 22:44:23.827--ServerSession(58890945)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
-[EL Info]: connection: 2018-06-06 22:44:23.836--ServerSession(58890945)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence login successful
+    <system-out>[EL Info]: connection: 2018-06-07 19:41:17.901--ServerSession(976358110)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence logout successful
+[EL Info]: 2018-06-07 19:41:17.962--ServerSession(259077766)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Warning]: metadata: 2018-06-07 19:41:17.973--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.973--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.974--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [address] for the entity class [class com.ecamping.Camping] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.974--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.975--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.975--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-07 19:41:17.975--ServerSession(259077766)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
+[EL Info]: connection: 2018-06-07 19:41:17.985--ServerSession(259077766)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence login successful
 </system-out>
-    <system-err>Wed Jun 06 22:44:23 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Wed Jun 06 22:44:23 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Wed Jun 06 22:44:37 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-jun 06, 2018 10:44:39 PM com.ecamping.RatingTest commitTransaction
+    <system-err>Thu Jun 07 19:41:17 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Thu Jun 07 19:41:17 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Thu Jun 07 19:41:31 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+jun 07, 2018 7:41:35 PM com.ecamping.RatingTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -164,7 +161,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.RatingTest" name="addRating" time="0.019">
+  <testcase classname="com.ecamping.RatingTest" name="addRating" time="0.034">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="14" failures="0" name="com.ecamping.UserTest" time="16.758" errors="10" skipped="0">
+<testsuite tests="14" failures="0" name="com.ecamping.UserTest" time="19.244" errors="10" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/isabella/jdk1.8.0_171/jre/lib/amd64"/>
@@ -60,8 +60,8 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.UserTest" name="UsuariosComecandoPelaLetraA" time="0.042"/>
-  <testcase classname="com.ecamping.UserTest" name="SelecionarTodosUsuarios" time="0.011">
+  <testcase classname="com.ecamping.UserTest" name="UsuariosComecandoPelaLetraA" time="0.044"/>
+  <testcase classname="com.ecamping.UserTest" name="SelecionarTodosUsuarios" time="0.009">
     <error message="java.lang.Long cannot be cast to java.lang.Integer" type="java.lang.ClassCastException">java.lang.ClassCastException: java.lang.Long cannot be cast to java.lang.Integer
 	at com.ecamping.UserTest.SelecionarTodosUsuarios(UserTest.java:159)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -193,14 +193,14 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apo
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
 	... 51 more
 </error>
-    <system-out>[EL Warning]: 2018-06-06 22:44:07.859--UnitOfWork(1817789863)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+    <system-out>[EL Warning]: 2018-06-07 19:40:59.138--UnitOfWork(1455855843)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
 Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;ecamping_db.User&apos; doesn&apos;t exist
 Error Code: 1146
 Call: UPDATE User AS u SET u.name = ? WHERE u.id = ?
 	bind =&gt; [2 parameters bound]
 Query: DataModifyQuery(sql=&quot;UPDATE User AS u SET u.name = ? WHERE u.id = ?&quot;)
 </system-out>
-    <system-err>jun 06, 2018 10:44:07 PM com.ecamping.UserTest commitTransaction
+    <system-err>jun 07, 2018 7:40:59 PM com.ecamping.UserTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -281,7 +281,7 @@ Exception Description: No transaction is currently active
 </error>
   </testcase>
   <testcase classname="com.ecamping.UserTest" name="UsuarioPorId" time="0.003"/>
-  <testcase classname="com.ecamping.UserTest" name="UsuarioPorNome" time="0.004">
+  <testcase classname="com.ecamping.UserTest" name="UsuarioPorNome" time="0.003">
     <error message="getSingleResult() did not retrieve any entities." type="javax.persistence.NoResultException">javax.persistence.NoResultException: getSingleResult() did not retrieve any entities.
 	at org.eclipse.persistence.internal.jpa.QueryImpl.throwNoResultException(QueryImpl.java:972)
 	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:522)
@@ -363,14 +363,11 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.UserTest" name="NNQNomesOrdenados" time="0.001"/>
-  <testcase classname="com.ecamping.UserTest" name="NQUsuarioPorNome" time="0.001"/>
-  <testcase classname="com.ecamping.UserTest" name="createUser" time="0.004">
-    <error message="HV000183: Unable to load &apos;javax.el.ExpressionFactory&apos;. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead" type="javax.validation.ValidationException">javax.validation.ValidationException: HV000183: Unable to load &apos;javax.el.ExpressionFactory&apos;. Check that you have the EL dependencies on the classpath, or use ParameterMessageInterpolator instead
-	at org.hibernate.validator.internal.engine.ValidatorFactoryImpl.createValidator(ValidatorFactoryImpl.java:339)
-	at org.hibernate.validator.internal.engine.ValidatorContextImpl.getValidator(ValidatorContextImpl.java:122)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.getValidator(BeanValidationListener.java:100)
-	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:84)
+  <testcase classname="com.ecamping.UserTest" name="NNQNomesOrdenados" time="0.002"/>
+  <testcase classname="com.ecamping.UserTest" name="NQUsuarioPorNome" time="0.002"/>
+  <testcase classname="com.ecamping.UserTest" name="createUser" time="0.251">
+    <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details.
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:748)
 	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:691)
@@ -415,7 +412,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-err>jun 06, 2018 10:44:07 PM com.ecamping.UserTest commitTransaction
+    <system-err>jun 07, 2018 7:40:59 PM com.ecamping.UserTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -455,7 +452,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.UserTest" name="createUser" time="0.005">
+  <testcase classname="com.ecamping.UserTest" name="createUser" time="0.251">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -495,7 +492,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.UserTest" name="UsuarioPorCPF" time="0.003">
+  <testcase classname="com.ecamping.UserTest" name="UsuarioPorCPF" time="0.004">
     <error message="getSingleResult() did not retrieve any entities." type="javax.persistence.NoResultException">javax.persistence.NoResultException: getSingleResult() did not retrieve any entities.
 	at org.eclipse.persistence.internal.jpa.QueryImpl.throwNoResultException(QueryImpl.java:972)
 	at org.eclipse.persistence.internal.jpa.QueryImpl.getSingleResult(QueryImpl.java:522)
@@ -536,7 +533,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.UserTest" name="deleteUser" time="0.056">
+  <testcase classname="com.ecamping.UserTest" name="deleteUser" time="0.107">
     <error message="Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
 Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ecamping_db`.`tb_booking`, CONSTRAINT `FK_tb_booking_ID_USER` FOREIGN KEY (`ID_USER`) REFERENCES `tb_user` (`ID`))
 Error Code: 1451
@@ -631,14 +628,14 @@ Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExce
 	at org.eclipse.persistence.internal.databaseaccess.DatabaseAccessor.executeDirectNoSelect(DatabaseAccessor.java:890)
 	... 52 more
 </error>
-    <system-out>[EL Warning]: 2018-06-06 22:44:07.91--UnitOfWork(79161706)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
+    <system-out>[EL Warning]: 2018-06-07 19:40:59.436--UnitOfWork(1829460911)--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.DatabaseException
 Internal Exception: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`ecamping_db`.`tb_booking`, CONSTRAINT `FK_tb_booking_ID_USER` FOREIGN KEY (`ID_USER`) REFERENCES `tb_user` (`ID`))
 Error Code: 1451
 Call: DELETE FROM tb_user WHERE (ID = ?)
 	bind =&gt; [1 parameter bound]
 Query: DeleteAllQuery(referenceClass=User sql=&quot;DELETE FROM tb_user WHERE (ID = ?)&quot;)
 </system-out>
-    <system-err>jun 06, 2018 10:44:07 PM com.ecamping.UserTest commitTransaction
+    <system-err>jun 07, 2018 7:40:59 PM com.ecamping.UserTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -678,7 +675,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.UserTest" name="deleteUser" time="0.056">
+  <testcase classname="com.ecamping.UserTest" name="deleteUser" time="0.112">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
