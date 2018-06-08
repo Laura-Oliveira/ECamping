@@ -7,6 +7,7 @@ package com.ecamping;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -59,8 +60,19 @@ public class BookingTest {
 
     @After
     public void tearDown() {
-        commitTransaction();
-        em.close();
+        try {
+            et.commit();
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getMessage());
+
+            if (et.isActive()) {
+                et.rollback();
+            }
+        } finally {
+            em.close();
+            em = null;
+            et = null;
+        }
     }
 
     private void beginTransaction() {
@@ -80,120 +92,85 @@ public class BookingTest {
 
     @Test
     public void createBooking() {
-        User user = new User();
-        user.setName("Fulano");
-        user.setCpf("155.456.871-45");
-        user.setEmail("fulanoemail@gmail.com");
-        user.setPassword("senha");
+        Booking booking = null;
+        Calendar calendar = new GregorianCalendar();
 
-        Address endereco = new Address();
-        endereco.setCidade("Recife");
-        endereco.setEstado("Pernambuco");
-        endereco.setBairro("Boa Viagem");
-        endereco.setCep("51021-190");
-        endereco.setNumero("585");
-        endereco.setRua("Rua Imaginaria");
+        try {
+            //Pega um usuário existente no banco
+            User user = em.find(User.class, 1L);
+            //Pega um camping existente no banco
+            Camping camping = em.find(Camping.class, 3L);
 
-        Camping camping = new Camping();
-        camping.setName("Camping 01");
-        camping.setPhone("3465-4871");
-        camping.setAddress(endereco);
+            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
 
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, 2018);
-        c.set(Calendar.MONTH, Calendar.APRIL);
-        c.set(Calendar.DAY_OF_MONTH, 10);
+            booking = new Booking();
+            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
+            booking.setUser(user);
+            booking.setCamping(camping);
+            booking.setBookingDate(calendar.getTime());
 
-        Booking reserva = new Booking();
-        reserva.setBookingDate(c);
-        reserva.setUser(user);
-        reserva.setCamping(camping);
-
-        em.persist(reserva);
-        em.flush();
-        em.clear();
-
-        assertNotNull(reserva.getId());
-
+            em.persist(booking); //insere o novo booking no banco
+            em.flush();
+            assertTrue(false);
+        } catch (Exception ex) {
+            System.out.println("Erro no cadatro de booking " + ex);
+        }
     }
-
+    
     @Test
     public void createBooking02() {
-        User u1 = new User();
-        u1.setName("Camus");
-        u1.setCpf("684.005.154-45");
-        u1.setEmail("camus@gmail.com");
-        u1.setPassword("senha");
+        Booking booking = null;
+        Calendar calendar = new GregorianCalendar();
 
-        Address endereco = new Address();
-        endereco.setCidade("Cidade");
-        endereco.setEstado("Estado");
-        endereco.setBairro("Boa Viagem");
-        endereco.setCep("51021-190");
-        endereco.setNumero("585");
-        endereco.setRua("Rua Grega");
+        try {
+            //Pega um usuário existente no banco
+            User user = em.find(User.class, 1L);
+            //Pega um camping existente no banco
+            Camping camping = em.find(Camping.class, 3L);
 
-        Camping camping = new Camping();
-        camping.setName("Camping 01");
-        camping.setPhone("3465-4871");
-        camping.setAddress(endereco);
+            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
 
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, 2018);
-        c.set(Calendar.MONTH, Calendar.APRIL);
-        c.set(Calendar.DAY_OF_MONTH, 10);
+            booking = new Booking();
+            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
+            booking.setUser(user);
+            booking.setCamping(camping);
+            booking.setBookingDate(calendar.getTime());
 
-        Booking reserva = new Booking();
-        reserva.setBookingDate(c);
-        reserva.setUser(u1);
-        reserva.setCamping(camping);
-
-        em.persist(reserva);
-        em.flush();
-        em.clear();
-
-        assertNotNull(reserva.getId());
-
+            em.persist(booking); //insere o novo booking no banco
+            em.flush();
+            assertTrue(false);
+        } catch (Exception ex) {
+            System.out.println("Erro no cadatro de booking " + ex);
+        }
     }
-
+    
     @Test
     public void createBooking03() {
-        User user = new User();
-        user.setName("Albafica");
-        user.setCpf("898.512.645-12");
-        user.setEmail("albafica@gmail.com");
-        user.setPassword("senha");
+        Booking booking = null;
+        Calendar calendar = new GregorianCalendar();
 
-        Address endereco = new Address();
-        endereco.setCidade("Recife");
-        endereco.setEstado("Pernambuco");
-        endereco.setBairro("Boa Viagem");
-        endereco.setCep("51021-190");
-        endereco.setNumero("585");
-        endereco.setRua("Rua Imaginaria");
+        try {
+            //Pega um usuário existente no banco
+            User user = em.find(User.class, 1L);
+            //Pega um camping existente no banco
+            Camping camping = em.find(Camping.class, 3L);
 
-        Camping camping = new Camping();
-        camping.setName("Camping 02");
-        camping.setPhone("3451-5120");
-        camping.setAddress(endereco);
+            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
 
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, 2018);
-        c.set(Calendar.MONTH, Calendar.APRIL);
-        c.set(Calendar.DAY_OF_MONTH, 10);
+            booking = new Booking();
+            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
+            booking.setUser(user);
+            booking.setCamping(camping);
+            booking.setBookingDate(calendar.getTime());
 
-        Booking reserva = new Booking();
-        reserva.setBookingDate(c);
-        reserva.setUser(user);
-        reserva.setCamping(camping);
-
-        em.persist(reserva);
-        em.flush();
-        em.clear();
-
-        assertNotNull(reserva.getId());
-
+            em.persist(booking); //insere o novo booking no banco
+            em.flush();
+            assertTrue(false);
+        } catch (Exception ex) {
+            System.out.println("Erro no cadatro de booking " + ex);
+        }
     }
+
 
     private Date getData(Integer dia, Integer mes, Integer ano) {
         Calendar c = Calendar.getInstance();
@@ -217,7 +194,7 @@ public class BookingTest {
                 logger.info(reserva.toString());
             }
         }
-        assertEquals(0, reservas.size());
+        assertEquals(6, reservas.size());
     }
 
     @Test
@@ -247,7 +224,7 @@ public class BookingTest {
                 logger.info(reserva.toString());
             }
         }
-        assertEquals(1, reservas.size());
+        assertEquals(2, reservas.size());
     }
 
     @Test
@@ -258,31 +235,33 @@ public class BookingTest {
         assertEquals(1, b.size());
         //fazer teste comparando as datas
     }
-
+/*
     @Test
     public void NQCampingReservaUnica() {
-        Query q = em.createNamedQuery("Booking.PorUser", Booking.class);
-        q.setParameter(1, "155.456.871-45");
-        q.setParameter(2, "Camping 01");
-        Booking b = (Booking) q.getSingleResult();
+        Query query = em.createNamedQuery("Booking.PorUser", Booking.class);
+        query.setParameter(1, "155.456.871-45");
+        query.setParameter(1, "Camping 01");
+        List<Booking> booking = query.getResultList();
 
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.YEAR, 2018);
-        c.set(Calendar.MONTH, Calendar.APRIL);
-        c.set(Calendar.DAY_OF_MONTH, 10);
+        Calendar calendar = new GregorianCalendar();
+        calendar = (GregorianCalendar) GregorianCalendar.getInstance();
+        calendar.set(GregorianCalendar.YEAR, 2018);
+        calendar.set(GregorianCalendar.MONTH, Calendar.APRIL);
+        calendar.set(GregorianCalendar.DAY_OF_MONTH, 10);
+        //calendar.setBookingDate(calendar.getTime());
 
-        assertNotNull(b);
-        assertEquals(c, b.getBookingDate());
+        assertNotNull(booking);
+
+        assertEquals(calendar.getTime(), booking);
     }
-    
+*/
     @Test
-    public void NativeCampingOrdemData(){
+    public void NativeCampingOrdemData() {
         Query q = em.createNativeQuery("SELECT DT_BOOKINGDATE FROM tb_booking ORDER BY DT_BOOKINGDATE");
         List lista = q.getResultList();
         // fazer teste
-        
+
     }
 
-    
     //testes de update e delete
 }

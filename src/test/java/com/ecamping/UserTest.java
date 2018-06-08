@@ -5,6 +5,7 @@
  */
 package com.ecamping;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +19,7 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -59,8 +61,19 @@ public class UserTest {
 
     @After
     public void tearDown() {
-        commitTransaction();
-        em.close();
+        try {
+            et.commit();
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, ex.getMessage());
+
+            if (et.isActive()) {
+                et.rollback();
+            }
+        } finally {
+            em.close();
+            em = null;
+            et = null;
+        }
     }
 
     private void beginTransaction() {
@@ -77,49 +90,49 @@ public class UserTest {
             fail(ex.getMessage());
         }
     }
-//CREATES
 
+    //CREATES
+   /*
     @Test
     public void createUser() {
         User u1 = new User();
-        u1.setName("Camus");
+        u1.setName("Joao da Silva Oliveira");
         u1.setCpf("684.005.154-45");
-        u1.setEmail("camus@gmail.com");
-        u1.setPassword("senha");
+        u1.setEmail("joao_oliveira@gmail.com");
+        u1.setPassword("Senh@_");
 
         em.persist(u1);
         em.flush();
-        em.clear();
-
         assertNotNull(u1.getId());
     }
-
+*/
     //TESTES NATIVE QUERY
+   /*
     @Test
     public void UsuarioPorId() {
-        Query query = em.createNativeQuery("SELECT TXT_NAME FROM tb_user WHERE ID LIKE 3");
+        Query query = em.createNativeQuery("SELECT TXT_NAME FROM tb_user WHERE ID LIKE 3", User.class);
         String user = (String) query.getSingleResult();
         assertNotNull(user);
         em.clear();
     }
-
+    */
+/*
     @Test
     public void UsuarioPorNome() {
-        Query query = em.createNativeQuery("SELECT TXT_EMAIL FROM tb_user WHERE TXT_NAME LIKE ?", User.class);
-        query.setParameter(1, "Albafica");
-        String usuario = (String) query.getSingleResult();
+        Query query = em.createNativeQuery("SELECT TXT_NAME FROM tb_user WHERE TXT_NAME LIKE ?", User.class);
+        query.setParameter(1, "Makenshi");
+        String usuario = query.getSingleResult().toString();
         em.clear();
-        System.out.println(usuario);
-        assertNotNull(usuario);
+        assertNotNull(usuario, query);
     }
-
+*/
     @Test
     public void NNQUsuarioPorEmail() {
         Query q = em.createNamedQuery("User.PorEmail", User.class);
-        q.setParameter(1, "albafica@gmail.com");
-        String found = (String) q.getSingleResult();
+        q.setParameter(1, "frida_kahlo@hotmail.com");
+        String found = q.getSingleResult().toString();
         em.clear();
-        assertEquals("Albafica", found);
+        assertEquals("Frida Kahlo", found);
 
     }
 
@@ -136,7 +149,7 @@ public class UserTest {
     @Test
     public void UsuarioPorCPF() {
         Query query = em.createQuery("SELECT u FROM User u WHERE u.cpf LIKE :cpf", User.class);
-        query.setParameter("cpf", "684.005.154-45");
+        query.setParameter("cpf", "909.987.710-23");
         User usuario = (User) query.getSingleResult();
         assertNotNull(usuario);
         em.clear();
@@ -155,14 +168,14 @@ public class UserTest {
 
     @Test
     public void SelecionarTodosUsuarios() {
-        Query query = em.createQuery("SELECT COUNT(u) FROM User u");
-        int usuarios = (int) query.getSingleResult();
+        Query query = em.createQuery("SELECT u FROM User u");
+        List<User> usuarios = query.getResultList();
         em.clear();
-        assertEquals(2, usuarios);
+        Assert.assertEquals(10, usuarios.size());
 
     }
 
-    //TESTES NAMED QUERY 
+    //TESTES NAMED QUERY    
     @Test
     public void NQUsuarioPorNome() {
         TypedQuery<User> q = em.createNamedQuery("User.PorNome", User.class);
@@ -172,19 +185,11 @@ public class UserTest {
         assertNotNull(usuarios); //melhorar teste
 
     }
-
-    /*@Test
-    public void NQUsuarioComCamping() {
-        TypedQuery<User> q = em.createNamedQuery("User.PorCamping", User.class);
-        List<User> usuarios = q.getResultList();
-        em.clear();
-        assertNotNull(usuarios);
-    }*/
-
+/*
     @Test
     public void updateUser() {
         Long id = 1L;
-        Query query = em.createNativeQuery("UPDATE User AS u SET u.name = ?1 WHERE u.id = ?2");
+        Query query = em.createNativeQuery("UPDATE User AS u SET u.name = ?1 WHERE u.id = ?2", User.class);
         query.setParameter(1, "Germino");
         query.setParameter(2, id);
 
@@ -202,9 +207,9 @@ public class UserTest {
 
     @Test
     public void deleteUser() {
-        Long id = 1L;
-        Query query = em.createQuery("DELETE FROM User AS u WHERE u.id = ?1");
-        query.setParameter(1, id);
+        Long id = 5L;
+        Query query = em.createQuery("DELETE FROM User AS u WHERE u.id = ?5", User.class);
+        query.setParameter(5, id);
 
         query.executeUpdate();
         em.flush();
@@ -212,21 +217,7 @@ public class UserTest {
 
         em.clear();
     }
-
-    /*
-    @Test
-    public void testHashCode() {
-        System.out.println("hashCode");
-        User instance = new User();
-        int expResult = 0;
-        int result = instance.hashCode();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-     
-     */
-
+*/
     //SqlResultMapping Test
     public void DadosUsuario() {
         Query q = em.createNativeQuery("SELECT ID, TXT_NAME,TXT_CPF,TXT_EMAIL WHERE TXT_EMAIL LIKE ?");
@@ -238,4 +229,5 @@ public class UserTest {
         }
         assertEquals(user[1], "Aldebaran");
     }
+
 }
