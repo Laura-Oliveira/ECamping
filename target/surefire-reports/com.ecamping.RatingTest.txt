@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.ecamping.RatingTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 17.936 sec <<< FAILURE!
-addRating(com.ecamping.RatingTest)  Time elapsed: 0.034 sec  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 18.446 sec <<< FAILURE!
+addRating(com.ecamping.RatingTest)  Time elapsed: 0.04 sec  <<< ERROR!
 javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'preUpdate'. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.preUpdate(BeanValidationListener.java:72)
@@ -48,7 +48,7 @@ javax.validation.ConstraintViolationException: Bean Validation constraint(s) vio
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-addRating(com.ecamping.RatingTest)  Time elapsed: 0.034 sec  <<< ERROR!
+addRating(com.ecamping.RatingTest)  Time elapsed: 0.04 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)

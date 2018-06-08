@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.ecamping.BookingTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 2, Errors: 12, Skipped: 0, Time elapsed: 18.314 sec <<< FAILURE!
-createBooking(com.ecamping.BookingTest)  Time elapsed: 0.032 sec  <<< ERROR!
+Tests run: 15, Failures: 2, Errors: 12, Skipped: 0, Time elapsed: 19.5 sec <<< FAILURE!
+createBooking(com.ecamping.BookingTest)  Time elapsed: 0.035 sec  <<< ERROR!
 javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'prePersist'. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -48,7 +48,7 @@ javax.validation.ConstraintViolationException: Bean Validation constraint(s) vio
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-createBooking(com.ecamping.BookingTest)  Time elapsed: 0.032 sec  <<< ERROR!
+createBooking(com.ecamping.BookingTest)  Time elapsed: 0.035 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -85,7 +85,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-NQCampingPorUser(com.ecamping.BookingTest)  Time elapsed: 0.043 sec  <<< ERROR!
+NQCampingPorUser(com.ecamping.BookingTest)  Time elapsed: 0.062 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -122,7 +122,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-NQCampingReservaUnica(com.ecamping.BookingTest)  Time elapsed: 0.005 sec  <<< ERROR!
+NQCampingReservaUnica(com.ecamping.BookingTest)  Time elapsed: 0.004 sec  <<< ERROR!
 java.lang.IllegalArgumentException: You have attempted to set a parameter at position 2 which does not exist in this query string SELECT b FROM Booking b WHERE b.user.name LIKE ?1.
 	at org.eclipse.persistence.internal.jpa.QueryImpl.setParameterInternal(QueryImpl.java:926)
 	at org.eclipse.persistence.internal.jpa.QueryImpl.setParameterInternal(QueryImpl.java:907)
@@ -162,7 +162,7 @@ java.lang.IllegalArgumentException: You have attempted to set a parameter at pos
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-NQCampingReservaUnica(com.ecamping.BookingTest)  Time elapsed: 0.005 sec  <<< ERROR!
+NQCampingReservaUnica(com.ecamping.BookingTest)  Time elapsed: 0.004 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -199,7 +199,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-createBooking02(com.ecamping.BookingTest)  Time elapsed: 0.002 sec  <<< ERROR!
+createBooking02(com.ecamping.BookingTest)  Time elapsed: 0.01 sec  <<< ERROR!
 javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'prePersist'. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -245,7 +245,7 @@ javax.validation.ConstraintViolationException: Bean Validation constraint(s) vio
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-createBooking02(com.ecamping.BookingTest)  Time elapsed: 0.002 sec  <<< ERROR!
+createBooking02(com.ecamping.BookingTest)  Time elapsed: 0.014 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -282,7 +282,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-createBooking03(com.ecamping.BookingTest)  Time elapsed: 0.005 sec  <<< ERROR!
+createBooking03(com.ecamping.BookingTest)  Time elapsed: 0.004 sec  <<< ERROR!
 javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'prePersist'. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -365,7 +365,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-bookingPorUsuario(com.ecamping.BookingTest)  Time elapsed: 0.033 sec  <<< ERROR!
+bookingPorUsuario(com.ecamping.BookingTest)  Time elapsed: 0.073 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -402,7 +402,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-bookingPorData(com.ecamping.BookingTest)  Time elapsed: 0.057 sec  <<< FAILURE!
+bookingPorData(com.ecamping.BookingTest)  Time elapsed: 0.064 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<0> but was:<6>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -442,7 +442,7 @@ java.lang.AssertionError: expected:<0> but was:<6>
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-bookingPorData(com.ecamping.BookingTest)  Time elapsed: 0.057 sec  <<< ERROR!
+bookingPorData(com.ecamping.BookingTest)  Time elapsed: 0.068 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)
@@ -479,7 +479,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-bookingPorCamping(com.ecamping.BookingTest)  Time elapsed: 0.011 sec  <<< FAILURE!
+bookingPorCamping(com.ecamping.BookingTest)  Time elapsed: 0.039 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<1> but was:<2>
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -519,7 +519,7 @@ java.lang.AssertionError: expected:<1> but was:<2>
 	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-bookingPorCamping(com.ecamping.BookingTest)  Time elapsed: 0.011 sec  <<< ERROR!
+bookingPorCamping(com.ecamping.BookingTest)  Time elapsed: 0.039 sec  <<< ERROR!
 java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.rollback(EntityTransactionImpl.java:176)

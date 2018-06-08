@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="2" name="com.ecamping.BookingTest" time="18.314" errors="12" skipped="0">
+<testsuite tests="15" failures="2" name="com.ecamping.BookingTest" time="19.5" errors="12" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/isabella/jdk1.8.0_171/jre/lib/amd64"/>
@@ -60,7 +60,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking" time="0.032">
+  <testcase classname="com.ecamping.BookingTest" name="createBooking" time="0.035">
     <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -107,21 +107,21 @@
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Info]: connection: 2018-06-07 19:40:59.533--ServerSession(1470358122)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence logout successful
-[EL Info]: 2018-06-07 19:40:59.612--ServerSession(976358110)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
-[EL Warning]: metadata: 2018-06-07 19:40:59.647--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.648--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.649--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [address] for the entity class [class com.ecamping.Camping] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.65--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.65--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.65--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
-[EL Warning]: metadata: 2018-06-07 19:40:59.65--ServerSession(976358110)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
-[EL Info]: connection: 2018-06-07 19:40:59.675--ServerSession(976358110)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence login successful
+    <system-out>[EL Info]: connection: 2018-06-08 19:22:27.479--ServerSession(1470358122)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence logout successful
+[EL Info]: 2018-06-08 19:22:27.528--ServerSession(1532554556)--EclipseLink, version: Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd
+[EL Warning]: metadata: 2018-06-08 19:22:27.539--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.54--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Rating] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.542--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [address] for the entity class [class com.ecamping.Camping] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.542--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.543--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Booking] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.544--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [camping] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2018-06-08 19:22:27.544--ServerSession(1532554556)--Reverting the lazy setting on the OneToOne or ManyToOne attribute [user] for the entity class [class com.ecamping.Comment] since weaving was not enabled or did not occur.
+[EL Info]: connection: 2018-06-08 19:22:27.555--ServerSession(1532554556)--file:/home/isabella/Documentos/ECamping/target/classes/_ecampingPersistence login successful
 </system-out>
-    <system-err>Thu Jun 07 19:40:59 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Thu Jun 07 19:40:59 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-Thu Jun 07 19:41:13 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
-jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>Fri Jun 08 19:22:27 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Jun 08 19:22:27 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Fri Jun 08 19:22:42 BRT 2018 WARN: Establishing SSL connection without server&apos;s identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn&apos;t set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to &apos;false&apos;. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -161,7 +161,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking" time="0.032">
+  <testcase classname="com.ecamping.BookingTest" name="createBooking" time="0.035">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -201,8 +201,8 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="NativeCampingOrdemData" time="0.003"/>
-  <testcase classname="com.ecamping.BookingTest" name="NQCampingPorUser" time="0.043">
+  <testcase classname="com.ecamping.BookingTest" name="NativeCampingOrdemData" time="0.007"/>
+  <testcase classname="com.ecamping.BookingTest" name="NQCampingPorUser" time="0.062">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -241,9 +241,9 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Warning]: 2018-06-07 19:41:17.779--UnitOfWork(791408866)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
+    <system-out>[EL Warning]: 2018-06-08 19:22:46.81--UnitOfWork(1624211687)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 </system-out>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 javax.persistence.RollbackException: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
@@ -297,7 +297,7 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="NQCampingReservaUnica" time="0.005">
+  <testcase classname="com.ecamping.BookingTest" name="NQCampingReservaUnica" time="0.004">
     <error message="You have attempted to set a parameter at position 2 which does not exist in this query string SELECT b FROM Booking b WHERE b.user.name LIKE ?1." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: You have attempted to set a parameter at position 2 which does not exist in this query string SELECT b FROM Booking b WHERE b.user.name LIKE ?1.
 	at org.eclipse.persistence.internal.jpa.QueryImpl.setParameterInternal(QueryImpl.java:926)
 	at org.eclipse.persistence.internal.jpa.QueryImpl.setParameterInternal(QueryImpl.java:907)
@@ -338,7 +338,7 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -378,7 +378,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="NQCampingReservaUnica" time="0.005">
+  <testcase classname="com.ecamping.BookingTest" name="NQCampingReservaUnica" time="0.004">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -418,7 +418,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking02" time="0.002">
+  <testcase classname="com.ecamping.BookingTest" name="createBooking02" time="0.01">
     <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -465,7 +465,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -505,7 +505,7 @@ javax.persistence.RollbackException: Transaction rolled back because transaction
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking02" time="0.002">
+  <testcase classname="com.ecamping.BookingTest" name="createBooking02" time="0.014">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -545,7 +545,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking03" time="0.005">
+  <testcase classname="com.ecamping.BookingTest" name="createBooking03" time="0.004">
     <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -592,7 +592,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
 javax.persistence.RollbackException: Transaction rolled back because transaction was set to RollbackOnly.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:141)
@@ -672,7 +672,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorUsuario" time="0.033">
+  <testcase classname="com.ecamping.BookingTest" name="bookingPorUsuario" time="0.073">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -711,9 +711,9 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
-    <system-out>[EL Warning]: 2018-06-07 19:41:17.826--UnitOfWork(1402531280)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
+    <system-out>[EL Warning]: 2018-06-08 19:22:46.907--UnitOfWork(1443675930)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 </system-out>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 javax.persistence.RollbackException: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
@@ -767,7 +767,7 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorData" time="0.057">
+  <testcase classname="com.ecamping.BookingTest" name="bookingPorData" time="0.064">
     <failure message="expected:&lt;0&gt; but was:&lt;6&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;0&gt; but was:&lt;6&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -808,9 +808,9 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>[EL Warning]: 2018-06-07 19:41:17.887--UnitOfWork(1494277749)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
+    <system-out>[EL Warning]: 2018-06-08 19:22:46.969--UnitOfWork(1635772897)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 </system-out>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:46 PM com.ecamping.BookingTest commitTransaction
 GRAVE: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 javax.persistence.RollbackException: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
@@ -864,7 +864,7 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorData" time="0.057">
+  <testcase classname="com.ecamping.BookingTest" name="bookingPorData" time="0.068">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active
@@ -904,7 +904,7 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </error>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorCamping" time="0.011">
+  <testcase classname="com.ecamping.BookingTest" name="bookingPorCamping" time="0.039">
     <failure message="expected:&lt;1&gt; but was:&lt;2&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;1&gt; but was:&lt;2&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -945,9 +945,9 @@ Exception Description: No transaction is currently active
 	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
-    <system-out>[EL Warning]: 2018-06-07 19:41:17.899--UnitOfWork(2103569615)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
+    <system-out>[EL Warning]: 2018-06-08 19:22:47.016--UnitOfWork(280531669)--javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 </system-out>
-    <system-err>jun 07, 2018 7:41:17 PM com.ecamping.BookingTest commitTransaction
+    <system-err>jun 08, 2018 7:22:47 PM com.ecamping.BookingTest commitTransaction
 GRAVE: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 javax.persistence.RollbackException: javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;preUpdate&apos;. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.transaction.EntityTransactionImpl.commit(EntityTransactionImpl.java:157)
@@ -1001,7 +1001,7 @@ Caused by: javax.validation.ConstraintViolationException: Bean Validation constr
 
 </system-err>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorCamping" time="0.011">
+  <testcase classname="com.ecamping.BookingTest" name="bookingPorCamping" time="0.039">
     <error message="
 Exception Description: No transaction is currently active" type="java.lang.IllegalStateException">java.lang.IllegalStateException: 
 Exception Description: No transaction is currently active

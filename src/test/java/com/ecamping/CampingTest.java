@@ -87,28 +87,27 @@ public class CampingTest {
         }
     }
 
-    /*  @Test
-    public void createCamping01() {
-        Address endereco = new Address();
-        endereco.setCidade("Recife");
-        endereco.setEstado("Pernambuco");
-        endereco.setBairro("Boa Viagem");
-        endereco.setCep("51.311-930");
-        endereco.setNumero("585");
-        endereco.setRua("Rua Imaginaria");
+    @Test
+    public void CreateCamping() {
+        Address endereco = null;
+        endereco = em.find(Address.class, 8L);
 
         Camping camping = new Camping();
-        camping.setName("Camping 06");
-        camping.setPhone("(81) 99509-3416");
-        camping.setInfo("Informações.");
+        camping.setName("Camping 08");
+        camping.setInfo("informacao pequena");
+        camping.setPhone("(11) 98542-1923");
         camping.setAddress(endereco);
 
-        em.persist(camping);
+        try {
+            em.persist(camping);
+            em.flush();
+            assertNotNull(camping.getId()); //algo de errado não está certo
+        } catch (Exception ex) {
+            System.out.println("Erro no cadatro de booking " + ex);
+        }
 
-        em.flush();
-        assertNotNull(camping.getId());
-    }*/
-    
+    }
+
     // TESTES NAMED QUERY    
     @Test
     public void NQCampingSemReservas() {
@@ -168,7 +167,7 @@ public class CampingTest {
         String camping = (String) query.getSingleResult();
         assertEquals("Camping 02", camping);
     }
-    
+
     @Test
     public void NativeQueryCampingPorTelefone() {
         //Seleciona o telefone do Camping 02
@@ -177,33 +176,14 @@ public class CampingTest {
         String telefone = (String) q.getSingleResult();
         assertEquals("(81) 99456-9035", telefone);
     }
-    
+
     @Test
-    public void NativeQueryRetornaNomeDeCamping(){
+    public void NativeQueryRetornaNomeDeCamping() {
         Query q = em.createNativeQuery("SELECT TXT_NAME FROM tb_camping WHERE ID = 5");
         String resultado = (String) q.getSingleResult();
         assertEquals("Camping 05", resultado);
     }
 
-    /*public void EstadosEmOrdem() {
-        String estado0 = "Pará";
-        String estado1 = "Paraná";
-        String estado2 = "Paraíba";
-        String estado3 = "Piauí";
-        String estado4 = "Pernambuco";
-        String estado5 = "Rio de Janeiro";
-        String estado6 = "Rio Grande do Norte";
-        String estado7 = "São Paulo";
-        
-        List<String> estados.add(estado0);
-        Query q = em.createNativeQuery("SELECT TXT_CIDADE FROM tb_address ORDER BY TXT_ESTADO", Camping.class);
-        List<Camping> resultado = q.getResultList();
-
-        for
-     {
-            
-        }
-    }*/
     //TESTES JPQL
     @Test
     public void JPQLretornaAddressQueIniciamComR() {
@@ -221,35 +201,40 @@ public class CampingTest {
         long total = query.getSingleResult();
         assertEquals(total, (long) 1);
     }
-    
+
     @Test
-    public void JPQLretornaCampingsComNumeroDeEnderecoEntre0e100(){
+    public void JPQLretornaCampingsComNumeroDeEnderecoEntre0e100() {
         TypedQuery<Camping> q = em.createQuery("SELECT c FROM Camping c WHERE c.address.numero BETWEEN 100 and 300", Camping.class);
         List<Camping> resultado = q.getResultList();
         assertEquals(4, resultado.size());
     }
-    
+
     @Test
-    public void JPQLupdateCamping(){
-        Query q = em.createQuery("UPDATE Camping c SET c.name = :novonome WHERE c.id LIKE 4");
-        q.setParameter("novonome", "Camping da zoeira");
-        
-        q.executeUpdate();
-        //terminar teste
-        
-        //uery query = em.createQuery("SELECT c FROM Camping c WHERE c.id LIKE 4");
-        //Camping c = (Camping) q.getSingleResult();
-        
-        //assertEquals("Camping da zoeira", c.getName());
+    public void JQLupdateCamping() {
+       Query q = em.createQuery("UPDATE Camping c SET c.name = :novonome WHERE c.id = :id");
+       q.setParameter("novonome", "Camping dahora");
+       q.setParameter("id", 4L);
+       
+       q.executeUpdate();
+      //falta teste
     }
 
-    /* @Test
-    public void allCampings() {
+    @Test
+    public void JPQLDeleteCamping() {
+        Query q = em.createQuery("DELETE FROM Camping c WHERE c.id LIKE 6");
+
+        q.executeUpdate();
+
+        assertNull(em.find(Camping.class, (long) 6));
+    }
+
+    @Test
+    public void JPQLallCampings() {
         //Seleciona todos os campings e os ordena pelo estado
         TypedQuery<Camping> query = em.createQuery(
                 "SELECT c FROM Camping c ORDER BY c.address.estado", Camping.class);
         List<Camping> campings = query.getResultList();
-        //assertEquals(3, campings.size());
-    }*/
-    //falta teste delete 
+        //assertEquals(5, campings.size());
+    }
+
 }

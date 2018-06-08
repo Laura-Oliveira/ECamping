@@ -68,8 +68,6 @@ public class Address implements Serializable {
     @Column(name= "TXT_NUMERO", nullable = false, length = 200)
     private String numero;
 
-    @OneToOne(mappedBy = "address", optional = false)
-    private Camping camping;
     
     public Long getId() {
         return id;
@@ -127,13 +125,7 @@ public class Address implements Serializable {
         this.numero = numero;
     }
 
-    public Camping getCamping() {
-        return camping;
-    }
 
-    public void setCamping(Camping camping) {
-        this.camping = camping;
-    }
     
     
     
