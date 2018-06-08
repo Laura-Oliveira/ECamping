@@ -74,6 +74,7 @@ public class User implements Serializable {
     @Column(name = "TXT_CPF", nullable = false, length = 14, unique = true)
     private String cpf;
     @NotNull
+    @NotBlank
     @Size(min = 5, max=200)
     @Column(name = "TXT_NAME", nullable = false, length = 255)
     private String name;

@@ -105,7 +105,7 @@ public class BookingTest {
         c.set(Calendar.DAY_OF_MONTH, 10);
 
         Booking reserva = new Booking();
-        reserva.setBookingDate(c);
+        reserva.setBookingDate(c.getTime());
         reserva.setUser(user);
         reserva.setCamping(camping);
 
@@ -144,7 +144,7 @@ public class BookingTest {
         c.set(Calendar.DAY_OF_MONTH, 10);
 
         Booking reserva = new Booking();
-        reserva.setBookingDate(c);
+        reserva.setBookingDate(c.getTime());
         reserva.setUser(u1);
         reserva.setCamping(camping);
 
@@ -183,7 +183,7 @@ public class BookingTest {
         c.set(Calendar.DAY_OF_MONTH, 10);
 
         Booking reserva = new Booking();
-        reserva.setBookingDate(c);
+        reserva.setBookingDate(c.getTime());
         reserva.setUser(user);
         reserva.setCamping(camping);
 

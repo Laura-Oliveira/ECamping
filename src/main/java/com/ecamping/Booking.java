@@ -25,6 +25,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -52,13 +53,14 @@ public class Booking implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Future(message="{invalid.bookingDate}")
+    @Future (message = "data no passado!")
     @Column(name = "DT_BOOKINGDATE")
     @Temporal(TemporalType.DATE)
-    private Calendar bookingDate;
+    private Date bookingDate;
     
     @ValidateTent
-    @Column(name = "TXT_TENT", nullable = true)
+    @NotNull(message = "The manufacturer name must not be null")
+    @Column(name = "TXT_TENT", nullable = false)
     private String tent;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
@@ -77,11 +79,11 @@ public class Booking implements Serializable {
         this.id = id;
     }
 
-    public Calendar getBookingDate() {
+    public Date getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(Calendar bookingDate) {
+    public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
     }
 
