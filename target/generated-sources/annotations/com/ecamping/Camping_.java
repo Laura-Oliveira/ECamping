@@ -9,7 +9,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-08T23:51:36")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-09T11:20:18")
 @StaticMetamodel(Camping.class)
 public class Camping_ { 
 

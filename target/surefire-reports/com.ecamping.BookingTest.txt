@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
-Test set: com.ecamping.CampingTest
+Test set: com.ecamping.BookingTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.666 sec <<< FAILURE!
-CreateCamping(com.ecamping.CampingTest)  Time elapsed: 0.012 sec  <<< ERROR!
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 14.252 sec <<< FAILURE!
+createBooking(com.ecamping.BookingTest)  Time elapsed: 0.027 sec  <<< ERROR!
 javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:'prePersist'. Please refer to embedded ConstraintViolations for details.
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
 	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
@@ -14,7 +14,7 @@ javax.validation.ConstraintViolationException: Bean Validation constraint(s) vio
 	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.registerNotRegisteredNewObjectForPersist(RepeatableWriteUnitOfWork.java:518)
 	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectForPersist(UnitOfWorkImpl.java:4235)
 	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.persist(EntityManagerImpl.java:496)
-	at com.ecamping.CampingTest.CreateCamping(CampingTest.java:86)
+	at com.ecamping.BookingTest.createBooking(BookingTest.java:111)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

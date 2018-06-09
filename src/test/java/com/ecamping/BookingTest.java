@@ -95,82 +95,24 @@ public class BookingTest {
         Booking booking = null;
         Calendar calendar = new GregorianCalendar();
 
-        try {
-            //Pega um usuário existente no banco
-            User user = em.find(User.class, 1L);
-            //Pega um camping existente no banco
-            Camping camping = em.find(Camping.class, 3L);
+        //Pega um usuário existente no banco
+        User user = em.find(User.class, 1L);
+        //Pega um camping existente no banco
+        Camping camping = em.find(Camping.class, 3L);
 
-            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
+        calendar.set(2019, Calendar.FEBRUARY, 23); //Data no passado
 
-            booking = new Booking();
-            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
-            booking.setUser(user);
-            booking.setCamping(camping);
-            booking.setBookingDate(calendar.getTime());
+        booking = new Booking();
+        booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
+        booking.setUser(user);
+        booking.setCamping(camping);
+        booking.setBookingDate(calendar.getTime());
 
-            em.persist(booking); //insere o novo booking no banco
-            em.flush();
-            assertTrue(false);
-        } catch (Exception ex) {
-            System.out.println("Erro no cadatro de booking " + ex);
-        }
+        em.persist(booking); //insere o novo booking no banco
+        em.flush();
+        assertTrue(false);
+
     }
-    
-    @Test
-    public void createBooking02() {
-        Booking booking = null;
-        Calendar calendar = new GregorianCalendar();
-
-        try {
-            //Pega um usuário existente no banco
-            User user = em.find(User.class, 1L);
-            //Pega um camping existente no banco
-            Camping camping = em.find(Camping.class, 3L);
-
-            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
-
-            booking = new Booking();
-            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
-            booking.setUser(user);
-            booking.setCamping(camping);
-            booking.setBookingDate(calendar.getTime());
-
-            em.persist(booking); //insere o novo booking no banco
-            em.flush();
-            assertTrue(false);
-        } catch (Exception ex) {
-            System.out.println("Erro no cadatro de booking " + ex);
-        }
-    }
-    
-    @Test
-    public void createBooking03() {
-        Booking booking = null;
-        Calendar calendar = new GregorianCalendar();
-
-        try {
-            //Pega um usuário existente no banco
-            User user = em.find(User.class, 1L);
-            //Pega um camping existente no banco
-            Camping camping = em.find(Camping.class, 3L);
-
-            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
-
-            booking = new Booking();
-            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
-            booking.setUser(user);
-            booking.setCamping(camping);
-            booking.setBookingDate(calendar.getTime());
-
-            em.persist(booking); //insere o novo booking no banco
-            em.flush();
-            assertTrue(false);
-        } catch (Exception ex) {
-            System.out.println("Erro no cadatro de booking " + ex);
-        }
-    }
-
 
     private Date getData(Integer dia, Integer mes, Integer ano) {
         Calendar c = Calendar.getInstance();
@@ -235,7 +177,8 @@ public class BookingTest {
         assertEquals(1, b.size());
         //fazer teste comparando as datas
     }
-/*
+
+    /*
     @Test
     public void NQCampingReservaUnica() {
         Query query = em.createNamedQuery("Booking.PorUser", Booking.class);
@@ -254,7 +197,7 @@ public class BookingTest {
 
         assertEquals(calendar.getTime(), booking);
     }
-*/
+     */
     @Test
     public void NativeCampingOrdemData() {
         Query q = em.createNativeQuery("SELECT DT_BOOKINGDATE FROM tb_booking ORDER BY DT_BOOKINGDATE");

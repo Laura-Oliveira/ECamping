@@ -35,7 +35,7 @@ public class Comment extends Feedback implements Serializable{
     
     @NotNull (message = "O usuario precisa ser definido!")
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-    @JoinColumn(name="ID_USER", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name="ID_USER", referencedColumnName = "ID")
     private User user;
     
     @NotNull (message = "O camping precisa ser definido!")

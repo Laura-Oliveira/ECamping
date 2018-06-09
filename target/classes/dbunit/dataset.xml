@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-    <tb_user TXT_NAME="Joana Darc" TXT_CPF="142.551.764-23" TXT_EMAIL="joanadarc@gmail.com" TXT_PASSWORD="joan@d@rC"/>
+   <tb_user TXT_NAME="Joana Darc" TXT_CPF="142.551.764-23" TXT_EMAIL="joanadarc@gmail.com" TXT_PASSWORD="joan@d@rC"/>
     <tb_user TXT_NAME="Fulano" TXT_CPF="441.551.764-23" TXT_EMAIL="fulano@gmail.com" TXT_PASSWORD="senha%%3F"/>
     <tb_user TXT_NAME="Tioziho" TXT_CPF="482.434.714-23" TXT_EMAIL="tiotio@gmail.com" TXT_PASSWORD="joanD@d@rC"/>
     <tb_user TXT_NAME="Luciana" TXT_CPF="106.796.944-63" TXT_EMAIL="luciana@gmail.com" TXT_PASSWORD="Senh@_4"/>
@@ -10,6 +10,7 @@
     <tb_user TXT_NAME="Grace Cooper" TXT_CPF="909.987.710-23" TXT_EMAIL="grace_cooper@gmail.com" TXT_PASSWORD="Grace_C@@per4" />
     <tb_user TXT_NAME="Frida Kahlo" TXT_CPF="777.884.950-00" TXT_EMAIL="frida_kahlo@hotmail.com" TXT_PASSWORD="kaHl@_Frid@9" />
     <tb_user TXT_NAME="Aisaka Taiga" TXT_CPF="045.619.010-43" TXT_EMAIL="minori_taiga@hotmail.com" TXT_PASSWORD="Min@ri_T@ig@5" />
+    <tb_user TXT_NAME="Eduardo" TXT_CPF="413.315.434-45" TXT_EMAIL="email@hotmail.com" TXT_PASSWORD="Senh@_394" />
 
     <tb_address TXT_CEP = "51.021-190" TXT_ESTADO = "Pernambuco" TXT_CIDADE = "Recife" TXT_RUA = "Rua de Testes" TXT_BAIRRO = "Qualquer um" TXT_NUMERO = "110"/>
     <tb_address TXT_CEP = "98.234-943" TXT_ESTADO = "Pernambuco" TXT_CIDADE = "Recife" TXT_RUA = "Rua mal assombrada" TXT_BAIRRO = "Piedade" TXT_NUMERO = "190"/>
@@ -18,15 +19,15 @@
     <tb_address TXT_CEP = "28920-012" TXT_ESTADO = "Rio de Janeiro" TXT_CIDADE = "Cabo Frio" TXT_RUA = "Rua Jaime Sales" TXT_BAIRRO = "Jardim Esperança" TXT_NUMERO = "200"/>
     <tb_address TXT_CEP = "59124-120" TXT_ESTADO = "Rio Grande do Norte" TXT_CIDADE = "Natal" TXT_RUA = "Rua Antonina" TXT_BAIRRO = "Potengi" TXT_NUMERO = "10"/>
     <tb_address TXT_CEP = "64002-080" TXT_ESTADO = "Piauí" TXT_CIDADE = "Teresina" TXT_RUA = "Rua Girinaldo Batista" TXT_BAIRRO = "Acarape" TXT_NUMERO = "50"/>
-    <tb_address TXT_CEP = "67033-054" TXT_ESTADO = "Pará" TXT_CIDADE = "Ananindeua" TXT_RUA = "Alameda Roselândia" TXT_BAIRRO = "Águas Brancas" TXT_NUMERO = "53"/>
-    <tb_address TXT_CEP = "58414-710" TXT_ESTADO = "Paraíba" TXT_CIDADE = "Campina Grande" TXT_RUA = "Avenida Aeroclube" TXT_BAIRRO = "Tambor" TXT_NUMERO = "33"/>
-    <tb_address TXT_CEP = "81315-630" TXT_ESTADO = "Paraná" TXT_CIDADE = "Curitiba" TXT_RUA = "Rua Deodato Ribas Sabóia" TXT_BAIRRO = "Cidade Industrial" TXT_NUMERO = "25"/>
-
+    <tb_address TXT_CEP = "83151-233" TXT_ESTADO = "São Paulo" TXT_CIDADE = "São Paulo" TXT_RUA = "Rua do camping 7" TXT_BAIRRO = "Bairro do camping 7" TXT_NUMERO = "345"/>
+    
     <tb_camping TXT_NAME ="Camping 01" TXT_INFO = "informações do camping 01" PHONE = "(81) 99558-3756" ID_ADDRESS = "1" />
     <tb_camping TXT_NAME ="Camping 02" TXT_INFO = "muitas informações adicionar do camping 02" PHONE = "(81) 99456-9035" ID_ADDRESS = "2" />
     <tb_camping TXT_NAME ="Camping 03" TXT_INFO = "quase nada" PHONE = "(11) 99165-8734" ID_ADDRESS = "3"/>
     <tb_camping TXT_NAME ="Camping 04" TXT_INFO = "apenas teste" PHONE = "(81) 99462-7042" ID_ADDRESS = "4"/>
     <tb_camping TXT_NAME ="Camping 05" TXT_INFO = "camping mais massa de todos" PHONE = "(81) 99469-8092" ID_ADDRESS = "5"/>
+    <tb_camping TXT_NAME ="Camping 06" TXT_INFO = "camping não tão massa quanto os outros" PHONE = "(81) 92369-8254" ID_ADDRESS = "6"/>
+    <tb_camping TXT_NAME ="Camping 07" TXT_INFO = "camping sem reserva" PHONE = "(81) 94339-4354" ID_ADDRESS = "7"/>
 
     <tb_booking DT_BOOKINGDATE = "2017-04-23" ID_CAMPING = "2" ID_USER = "5" TXT_TENT = "DUPLEX"/>	
     <tb_booking DT_BOOKINGDATE = "2016-08-10" ID_CAMPING = "2" ID_USER = "1" TXT_TENT = "DUPLEX"/>	
@@ -75,5 +76,6 @@
     <tb_rating ID_FEEDBACK = '14' INT_VALUE = '7' ID_USER = "7" ID_CAMPING = "4"/>
     <tb_rating ID_FEEDBACK = '15' INT_VALUE = '8' ID_USER = "9" ID_CAMPING = "3"/>
     <tb_rating ID_FEEDBACK = '16' INT_VALUE = '9' ID_USER = "10" ID_CAMPING = "2"/>
+
    
 </dataset>

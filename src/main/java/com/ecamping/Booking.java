@@ -62,11 +62,11 @@ public class Booking implements Serializable {
     @Column(name = "TXT_TENT", nullable = true)
     private String tent;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "ID_CAMPING", referencedColumnName = "ID", nullable = false)
     private Camping camping;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "ID_USER", referencedColumnName = "ID", nullable = false)
     private User user;
 
