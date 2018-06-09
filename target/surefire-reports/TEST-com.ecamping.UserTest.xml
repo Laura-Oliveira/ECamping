@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.ecamping.UserTest" time="0.014" errors="2" skipped="0">
+<testsuite tests="10" failures="0" name="com.ecamping.UserTest" time="11.087" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/ramon/jdk1.8.0_171/jre/lib/amd64"/>
@@ -13,6 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
+    <property name="test" value="com.ecamping.**.*Test"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/ramon/NetBeansProjects/ECamping"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
@@ -35,14 +36,14 @@
     <property name="user.home" value="/home/ramon"/>
     <property name="user.timezone" value="America/Recife"/>
     <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
-    <property name="file.encoding" value="UTF-8"/>
     <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
     <property name="user.name" value="ramon"/>
     <property name="java.class.path" value="/home/ramon/netbeans-8.2/java/maven/boot/plexus-classworlds-2.4.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/home/ramon/jdk1.8.0_171/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=/home/ramon/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.ecamping.**.*Test -Dmaven.ext.class.path=/home/ramon/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,79 +61,14 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.UserTest" name="com.ecamping.UserTest" time="0.071">
-    <error message="
-Exception Description: An exception was thrown while searching for persistence archives with ClassLoader: sun.misc.Launcher$AppClassLoader@6bc7c054
-Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28022] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Value [true] for the property [eclipselink.weaving] is incorrect when global instrumentation is null, value should either be null, false, or static." type="Local Exception Stack">Local Exception Stack: 
-Exception [EclipseLink-30005] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.PersistenceUnitLoadingException
-Exception Description: An exception was thrown while searching for persistence archives with ClassLoader: sun.misc.Launcher$AppClassLoader@6bc7c054
-Internal Exception: javax.persistence.PersistenceException: Exception [EclipseLink-28022] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Value [true] for the property [eclipselink.weaving] is incorrect when global instrumentation is null, value should either be null, false, or static.
-	at org.eclipse.persistence.exceptions.PersistenceUnitLoadingException.exceptionSearchingForPersistenceResources(PersistenceUnitLoadingException.java:127)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:107)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactory(PersistenceProvider.java:177)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
-	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
-	at com.ecamping.UserTest.setUpClass(UserTest.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-Caused by: javax.persistence.PersistenceException: Exception [EclipseLink-28022] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Value [true] for the property [eclipselink.weaving] is incorrect when global instrumentation is null, value should either be null, false, or static.
-	at org.eclipse.persistence.internal.jpa.deployment.JavaSECMPInitializer.checkWeaving(JavaSECMPInitializer.java:132)
-	at org.eclipse.persistence.internal.jpa.deployment.JPAInitializer.callPredeploy(JPAInitializer.java:88)
-	at org.eclipse.persistence.jpa.PersistenceProvider.createEntityManagerFactoryImpl(PersistenceProvider.java:96)
-	... 26 more
-Caused by: Exception [EclipseLink-28022] (Eclipse Persistence Services - 2.5.2.v20140319-9ad6abd): org.eclipse.persistence.exceptions.EntityManagerSetupException
-Exception Description: Value [true] for the property [eclipselink.weaving] is incorrect when global instrumentation is null, value should either be null, false, or static.
-	at org.eclipse.persistence.exceptions.EntityManagerSetupException.wrongWeavingPropertyValue(EntityManagerSetupException.java:262)
-	... 29 more
-</error>
-  </testcase>
-  <testcase classname="com.ecamping.UserTest" name="com.ecamping.UserTest" time="0.071">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at com.ecamping.UserTest.tearDownClass(UserTest.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:33)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
-	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
-	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
-</error>
-  </testcase>
+  <testcase classname="com.ecamping.UserTest" name="UsuariosComecandoPelaLetraA" time="0.014"/>
+  <testcase classname="com.ecamping.UserTest" name="SelecionarTodosUsuarios" time="0.019"/>
+  <testcase classname="com.ecamping.UserTest" name="updateUser" time="0.133"/>
+  <testcase classname="com.ecamping.UserTest" name="UsuarioPorId" time="0.001"/>
+  <testcase classname="com.ecamping.UserTest" name="UsuarioPorNome" time="0.002"/>
+  <testcase classname="com.ecamping.UserTest" name="NNQUsuarioPorEmail" time="0.001"/>
+  <testcase classname="com.ecamping.UserTest" name="NNQNomesOrdenados" time="0.001"/>
+  <testcase classname="com.ecamping.UserTest" name="NQUsuarioPorNome" time="0.006"/>
+  <testcase classname="com.ecamping.UserTest" name="createUser" time="0.043"/>
+  <testcase classname="com.ecamping.UserTest" name="UsuarioPorCPF" time="0.004"/>
 </testsuite>

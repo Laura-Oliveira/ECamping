@@ -18,8 +18,6 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import javax.validation.Validation;
-import javax.validation.Validator;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -29,11 +27,11 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author laura
+ * @author ramon
  */
-public class RatingTest {
+public class CommentTest {
     
-    public RatingTest() {
+    public CommentTest() {
     }
     
     private static EntityManagerFactory emf;
@@ -80,25 +78,19 @@ public class RatingTest {
         }
     }
     
-    //TEST CLASSES
+    
     @Test
     public void addRating(){
        
         User user = em.find(User.class, 1L);
         Camping camping = new Camping();
-        camping.setName("Camping 08");
-        camping.setInfo("informacao pequena");
-        camping.setPhone("(81) 98502-3814");
-        
-        User u1 = new User();
-        u1.setName("Joao da Silva Oliveira");
-        u1.setCpf("10826570429");
-        u1.setEmail("joao_oliveira@gmail.com");
-        u1.setPassword("Senh@_32");
+        camping.setName("Camping 12");
+        camping.setInfo("informacaonçao muito relevante mas relevante");
+        camping.setPhone("(21) 99322-1973");
 
         Rating rating1 = new Rating();
         rating1.setValue(2);
-        rating1.setUser(u1);
+        rating1.setUser(user);
         rating1.setCamping(camping);
         rating1.setPublish(Calendar.getInstance().getTime());
         rating1.setUpdate(Calendar.getInstance().getTime());
@@ -123,43 +115,33 @@ public class RatingTest {
     }
     
     @Test
-    public void updateRating(){
+    public void updateComment(){
         
 
-        TypedQuery<Rating> q = em.createQuery("UPDATE Rating r SET r.value = :value WHERE r.value = :id", Rating.class);
-        q.setParameter("value", 4);
-        q.setParameter("id", 1);
+        TypedQuery<Comment> q = em.createQuery("UPDATE Comment c SET c.message = :message WHERE c.message = :text", Comment.class);
+        q.setParameter("message", "Nossa o camping é muito da hora!");
+        q.setParameter("text", "Mensagem de Joana Darc sobre camping 1");
         q.executeUpdate();
         
-        assertEquals(4, q.getParameterValue("value"));
+        assertEquals("Nossa o camping é muito da hora!", q.getParameterValue("message"));
         
     }
     
     @Test
     public void ratingList(){
         
-        Query ratings = em.createNamedQuery("Rating.AllRating", Rating.class);
-        List<Rating> list = ratings.getResultList();
+        Query comments = em.createNamedQuery("Comment.AllComment", Comment.class);
+        List<Comment> list = comments.getResultList();
         assertEquals(8, list.size());
     }
     
     @Test
-    public void ratingsBetweenOneAndThree(){ 
-        TypedQuery<Rating> q = em.createQuery("SELECT r FROM Rating r WHERE r.value BETWEEN 1 AND 3", Rating.class);
+    public void commentBetweenTwoDates(){ 
+        TypedQuery<Rating> q = em.createQuery("SELECT c FROM Comment c WHERE c.publish BETWEEN '2015-03-19' AND '2017-03-02'", Rating.class);
         List<Rating> resultado = q.getResultList();
-        assertEquals(3, resultado.size());
+        assertEquals(4, resultado.size());
     }
     
-    @Test
-    public void ratingDelete() {
-        
-        Query q = em.createQuery("DELETE FROM Rating r WHERE r.publish LIKE '2013-12-07'");
 
-        q.executeUpdate();
-        
-        TypedQuery<Rating> query = em.createQuery("SELECT r FROM Rating r WHERE r.publish LIKE '2013-12-07'", Rating.class);
-        List<Rating> rating = query.getResultList();
-        assertEquals(0, rating.size());
-    }
     
 }

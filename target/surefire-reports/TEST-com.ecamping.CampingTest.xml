@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="com.ecamping.CampingTest" time="12.208" errors="0" skipped="0">
+<testsuite tests="14" failures="0" name="com.ecamping.CampingTest" time="9.445" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/home/ramon/jdk1.8.0_171/jre/lib/amd64"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="test" value="com.ecamping.CampingTest"/>
+    <property name="test" value="com.ecamping.**.*Test"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/ramon/NetBeansProjects/ECamping"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/home/ramon/jdk1.8.0_171/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.ecamping.CampingTest -Dmaven.ext.class.path=/home/ramon/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.ecamping.**.*Test -Dmaven.ext.class.path=/home/ramon/netbeans-8.2/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -61,19 +61,18 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingComMaiorInfo" time="0.108"/>
-  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaQuantidadeDeCampingsNumEstado" time="0.017"/>
-  <testcase classname="com.ecamping.CampingTest" name="JPQLDeleteCamping" time="0.076"/>
-  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaCampingsComNumeroDeEnderecoEntre0e100" time="0.279"/>
-  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaAddressQueIniciamComR" time="0.026"/>
-  <testcase classname="com.ecamping.CampingTest" name="CreateCamping" time="0.01"/>
-  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorCidade" time="0.009"/>
-  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorEstado" time="0.015"/>
-  <testcase classname="com.ecamping.CampingTest" name="NQCampingSemReservas" time="0.051"/>
-  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingPorTelefone" time="0.004"/>
-  <testcase classname="com.ecamping.CampingTest" name="NQCampingPorNome" time="0.01"/>
-  <testcase classname="com.ecamping.CampingTest" name="NativeQueryRetornaNomeDeCamping" time="0.002"/>
-  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorID" time="0.007"/>
-  <testcase classname="com.ecamping.CampingTest" name="JPQLallCampings" time="0.012"/>
-  <testcase classname="com.ecamping.CampingTest" name="JQLupdateCamping" time="0.118"/>
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingComMaiorInfo" time="0.001"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaQuantidadeDeCampingsNumEstado" time="0.01"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLDeleteCamping" time="0.044"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaCampingsComNumeroDeEnderecoEntre0e100" time="0.03"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaAddressQueIniciamComR" time="0.006"/>
+  <testcase classname="com.ecamping.CampingTest" name="CreateCamping" time="0.052"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorCidade" time="0.004"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorEstado" time="0.005"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQCampingSemReservas" time="0.008"/>
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingPorTelefone" time="0.002"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQCampingPorNome" time="0.004"/>
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryRetornaNomeDeCamping" time="0.003"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorID" time="0.003"/>
+  <testcase classname="com.ecamping.CampingTest" name="JQLupdateCamping" time="0.049"/>
 </testsuite>

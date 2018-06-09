@@ -30,21 +30,16 @@ import javax.validation.constraints.NotNull;
 @Table(name="tb_rating")
 @DiscriminatorValue(value = "R")
 @PrimaryKeyJoinColumn(name="ID_FEEDBACK", referencedColumnName = "ID")
-//@NamedQueries(
-//        {
-//            @NamedQuery(
-//                    name = "Rating.ValueLessThanThree",
-//                    query = "SELECT a FROM Rating a WHERE a.nome LIKE :nome ORDER BY a.id"
-//            ),
-//                @NamedQuery(
-//                    name = "Rating.PorTipoDeExercicio",
-//                    query = "SELECT DISTINCT a FROM Rating a JOIN a.exercicios xs WHERE xs.tipo = :ex"
-//            )
-//        }
-//)
+@NamedQueries(
+    {
+        @NamedQuery(
+                name = "Rating.AllRating",
+                query = "SELECT r FROM Rating r"
+        )
+    }
+)
 public class Rating extends Feedback implements Serializable{
     
-    @Max(5)
     @NotNull
     @Column(name="INT_VALUE", nullable = false)
     private int value;
@@ -82,7 +77,5 @@ public class Rating extends Feedback implements Serializable{
     public void setCamping(Camping camping) {
         this.camping = camping;
     }
-    
-    
     
 }

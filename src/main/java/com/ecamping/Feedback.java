@@ -40,8 +40,9 @@ public abstract class Feedback implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
     
+    @NotNull
     @Temporal(TemporalType.DATE)
-    @Column(name="DT_PUBLISH", nullable = true)
+    @Column(name="DT_PUBLISH", nullable = false)
     private Date publish;
     
     @NotNull

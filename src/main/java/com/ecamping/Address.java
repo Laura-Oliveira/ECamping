@@ -43,7 +43,7 @@ public class Address implements Serializable {
     private Long id;
     
     @NotNull
-    @Pattern(regexp = "[0-90]{2}.[0-9]{3}-[0-9]{3}", message = "{invalid.cep}")
+    @Pattern(regexp = "[0-9]{5}-[0-9]{3}", message = "{invalid.cep}")
     @Column(name= "TXT_CEP", nullable = false, length = 10)
     private String cep;
     
