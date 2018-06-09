@@ -72,8 +72,8 @@ public class Camping implements Serializable
     
     @NotBlank
     @Pattern (regexp = "^(\\([0-9]{2}\\))\\s([9]{1})?([0-9]{4})-([0-9]{4})$", message="{invalid.phone}")
-    @Max(value=17)
-    @Column(name="PHONE", nullable = false, length = 17)
+    @Max(value=15)
+    @Column(name="PHONE", nullable = false, length = 15)
     private String phone;
     
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,

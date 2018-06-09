@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="1" name="com.ecamping.BookingTest" time="17.702" errors="0" skipped="0">
+<testsuite tests="14" failures="1" name="com.ecamping.CampingTest" time="20.522" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
-    <property name="test" value="com.ecamping.BookingTest"/>
+    <property name="test" value="com.ecamping.CampingTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="/home/laura/Documentos/ECamping/ECamping"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/usr/lib/jvm/java-8-oracle/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.ecamping.BookingTest -Dmaven.ext.class.path=/opt/netbeans/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=com.ecamping.CampingTest -Dmaven.ext.class.path=/opt/netbeans/java/maven-nblib/netbeans-eventspy.jar surefire:test"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
@@ -60,16 +60,71 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking" time="0.309"/>
-  <testcase classname="com.ecamping.BookingTest" name="NativeCampingOrdemData" time="0"/>
-  <testcase classname="com.ecamping.BookingTest" name="NQCampingPorUser" time="0.116"/>
-  <testcase classname="com.ecamping.BookingTest" name="NQCampingReservaUnica" time="0.008">
-    <failure message="expected:&lt;Tue Apr 10 19:57:06 BRT 2018&gt; but was:&lt;[]&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;Tue Apr 10 19:57:06 BRT 2018&gt; but was:&lt;[]&gt;
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingComMaiorInfo" time="0.052"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaQuantidadeDeCampingsNumEstado" time="0.022"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLDeleteCamping" time="0.03"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaCampingsComNumeroDeEnderecoEntre0e100" time="0.323"/>
+  <testcase classname="com.ecamping.CampingTest" name="JPQLretornaAddressQueIniciamComR" time="0.015"/>
+  <testcase classname="com.ecamping.CampingTest" name="CreateCamping" time="0.023">
+    <error message="Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details." type="javax.validation.ConstraintViolationException">javax.validation.ConstraintViolationException: Bean Validation constraint(s) violated while executing Automatic Bean Validation on callback event:&apos;prePersist&apos;. Please refer to embedded ConstraintViolations for details.
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.validateOnCallbackEvent(BeanValidationListener.java:90)
+	at org.eclipse.persistence.internal.jpa.metadata.listeners.BeanValidationListener.prePersist(BeanValidationListener.java:62)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyListener(DescriptorEventManager.java:748)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.notifyEJB30Listeners(DescriptorEventManager.java:691)
+	at org.eclipse.persistence.descriptors.DescriptorEventManager.executeEvent(DescriptorEventManager.java:229)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectClone(UnitOfWorkImpl.java:4316)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNotRegisteredNewObjectForPersist(UnitOfWorkImpl.java:4293)
+	at org.eclipse.persistence.internal.sessions.RepeatableWriteUnitOfWork.registerNotRegisteredNewObjectForPersist(RepeatableWriteUnitOfWork.java:518)
+	at org.eclipse.persistence.internal.sessions.UnitOfWorkImpl.registerNewObjectForPersist(UnitOfWorkImpl.java:4235)
+	at org.eclipse.persistence.internal.jpa.EntityManagerImpl.persist(EntityManagerImpl.java:496)
+	at com.ecamping.CampingTest.CreateCamping(CampingTest.java:91)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+    <system-err>jun 08, 2018 11:56:21 PM com.ecamping.CampingTest tearDown
+GRAVE: Transaction rolled back because transaction was set to RollbackOnly.
+</system-err>
+  </testcase>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorCidade" time="0.008"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorEstado" time="0.041"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQCampingSemReservas" time="0.004">
+    <failure message="expected:&lt;1&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;1&gt; but was:&lt;0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.ecamping.BookingTest.NQCampingReservaUnica(BookingTest.java:255)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at com.ecamping.CampingTest.NQCampingSemReservas(CampingTest.java:103)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -105,9 +160,9 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
 </failure>
   </testcase>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking02" time="0.007"/>
-  <testcase classname="com.ecamping.BookingTest" name="createBooking03" time="0.004"/>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorUsuario" time="0.005"/>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorData" time="0.028"/>
-  <testcase classname="com.ecamping.BookingTest" name="bookingPorCamping" time="0.033"/>
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryCampingPorTelefone" time="0.003"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQCampingPorNome" time="0.017"/>
+  <testcase classname="com.ecamping.CampingTest" name="NativeQueryRetornaNomeDeCamping" time="0"/>
+  <testcase classname="com.ecamping.CampingTest" name="NQEnderecoPorID" time="0.018"/>
+  <testcase classname="com.ecamping.CampingTest" name="JQLupdateCamping" time="0.048"/>
 </testsuite>
