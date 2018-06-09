@@ -153,7 +153,7 @@ public class BeanValidationTest {
                 }
             }
             //Teste para ver se a quantidade de violações é igual a 2
-            assertEquals(5, constraintViolations.size());
+            assertEquals(4, constraintViolations.size());
             
         }
     }

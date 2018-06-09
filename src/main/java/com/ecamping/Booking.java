@@ -53,14 +53,13 @@ public class Booking implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Future (message = "data no passado!")
+    @Future(message="{invalid.bookingDate}")
     @Column(name = "DT_BOOKINGDATE")
     @Temporal(TemporalType.DATE)
     private Date bookingDate;
     
     @ValidateTent
-    @NotNull(message = "The manufacturer name must not be null")
-    @Column(name = "TXT_TENT", nullable = false)
+    @Column(name = "TXT_TENT", nullable = true)
     private String tent;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
@@ -110,7 +109,10 @@ public class Booking implements Serializable {
     public void setTent(String tent) {
         this.tent = tent;
     }
-    
-    
+/*
+    void setBookingDate(Calendar c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   */
 
 }

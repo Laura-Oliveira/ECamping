@@ -73,11 +73,11 @@ public class Camping implements Serializable
     @NotBlank
     @Pattern (regexp = "^(\\([0-9]{2}\\))\\s([9]{1})?([0-9]{4})-([0-9]{4})$", message="{invalid.phone}")
     @Max(value=17)
-    @Column(name="PHONE", nullable = false, length = 17)
+    @Column(name="PHONE", nullable = false, length = 15)
     private String phone;
     
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL,
-            orphanRemoval = true, optional = false)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false,
+            orphanRemoval = true)
     @JoinColumn(name = "ID_ADDRESS", referencedColumnName = "ID")
     private Address address; 
     
@@ -182,6 +182,4 @@ public class Camping implements Serializable
         comment.setCamping(this);
     }
 
-    
-    
 }
