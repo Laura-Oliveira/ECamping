@@ -91,20 +91,19 @@ public class BeanValidationTest {
         Calendar calendar = new GregorianCalendar();
                 
         try{
-            //Pega um usuário existente no banco
+            
             User user = em.find(User.class, 1L);
-            //Pega um camping existente no banco
             Camping camping = em.find(Camping.class, 3L);
             
-            calendar.set(2010, Calendar.FEBRUARY, 23); //Data no passado
+            calendar.set(2010, Calendar.FEBRUARY, 23);
             
             booking = new Booking();
-            booking.setTent(""); //Forma inválida, deve ser INDIVIDUAL ou duplex
+            booking.setTent(""); 
             booking.setUser(user);
             booking.setCamping(camping);
             booking.setBookingDate(calendar.getTime());
             
-            em.persist(booking); //insere o novo booking no banco
+            em.persist(booking); 
             em.flush();
             assertTrue(false); 
             
@@ -112,13 +111,12 @@ public class BeanValidationTest {
 
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            //no geral, verifica se há violações de validação
             if (logger.isLoggable(Level.INFO)) {
                 for (ConstraintViolation violation : constraintViolations) {
                     Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}\n\n", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
                 }
             }
-            //Teste para ver se a quantidade de violações é igual a 2
+
             assertEquals(2, constraintViolations.size());
             
         }
@@ -133,12 +131,12 @@ public class BeanValidationTest {
         try{
             
             user = new User();
-            user.setName(" ");//não pode ser em branco
-            user.setCpf("111.111.11-11"); //formatação errada
-            user.setEmail("AlexandreMagno.as.com");//formatação errada
+            user.setName(" ");
+            user.setCpf("111.111.11-11"); 
+            user.setEmail("AlexandreMagno.as.com");
             user.setPassword("ssdf@sf55D");
                     
-            em.persist(user); //insere o novo booking no banco
+            em.persist(user); 
             em.flush();
             assertTrue(false); 
             
@@ -146,14 +144,13 @@ public class BeanValidationTest {
 
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
             
-            //no geral, verifica se há violações de validação
             if (logger.isLoggable(Level.INFO)) {
                 for (ConstraintViolation violation : constraintViolations) {
                     Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}\n\n", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
                 }
             }
-            //Teste para ver se a quantidade de violações é igual a 2
-            assertEquals(4, constraintViolations.size());
+
+            assertEquals(3, constraintViolations.size());
             
         }
     }
@@ -179,22 +176,21 @@ public class BeanValidationTest {
             camping.setInfo(" ");
             camping.setAddress(address);
             
-            em.persist(camping); //insere o novo booking no banco
+            em.persist(camping); 
             em.flush();
             assertTrue(false); 
             
         } catch (ConstraintViolationException ex) {
 
             Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
-            
-            //no geral, verifica se há violações de validação
+
             if (logger.isLoggable(Level.INFO)) {
                 for (ConstraintViolation violation : constraintViolations) {
                     Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}\n\n", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
                 }
             }
-            //Teste para ver se a quantidade de violações é igual a 2
-            assertEquals(4, constraintViolations.size());
+
+            assertEquals(3, constraintViolations.size());
             
         }
         

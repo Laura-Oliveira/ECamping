@@ -6,6 +6,7 @@
 package com.ecamping;
 
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
@@ -14,6 +15,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -38,8 +41,7 @@ public class CampingTest {
     @BeforeClass
     public static void setUpClass() {
         logger = Logger.getGlobal();
-        logger.setLevel(Level.INFO);
-        logger.setLevel(Level.SEVERE);
+        //logger.setLevel(Level.INFO);
         emf = Persistence.createEntityManagerFactory("ecampingPersistence");
         DbUnitUtil.inserirDados();
     }
@@ -57,19 +59,8 @@ public class CampingTest {
 
     @After
     public void tearDown() {
-        try {
-            et.commit();
-        } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage());
-
-            if (et.isActive()) {
-                et.rollback();
-            }
-        } finally {
-            em.close();
-            em = null;
-            et = null;
-        }
+        commitTransaction();
+        em.close();
     }
 
     private void beginTransaction() {
@@ -81,40 +72,51 @@ public class CampingTest {
         try {
             et.commit();
         } catch (Exception ex) {
-            logger.log(Level.SEVERE, ex.getMessage(), ex);
-            et.rollback();
-            fail(ex.getMessage());
+            //logger.log(Level.SEVERE, ex.getMessage(), ex);
+            if (et.isActive()) {
+                et.rollback();
+            }
+//            fail(ex.getMessage());    
         }
-    }
+    }  
+    
 
     @Test
     public void CreateCamping() {
-        Address endereco = null;
-        endereco = em.find(Address.class, 8L);
+     
+        Address endereco = em.find(Address.class, 5L);
 
         Camping camping = new Camping();
         camping.setName("Camping 08");
-        camping.setInfo("informacao pequena");
+        camping.setInfo("informacao não tão pequena");
         camping.setPhone("(11) 98542-1923");
         camping.setAddress(endereco);
 
         try {
             em.persist(camping);
             em.flush();
-            assertNotNull(camping.getId()); //algo de errado não está certo
-        } catch (Exception ex) {
-            System.out.println("Erro no cadatro de booking " + ex);
+            assertNotNull(camping); //algo de errado não está certo
+        } catch(ConstraintViolationException ex){
+        
+        Set<ConstraintViolation<?>> constraintViolations = ex.getConstraintViolations();
+            
+            
+            if (logger.isLoggable(Level.INFO)) {
+                for (ConstraintViolation violation : constraintViolations) {
+                    Logger.getGlobal().log(Level.INFO, "{0}.{1}: {2}\n\n", new Object[]{violation.getRootBeanClass(), violation.getPropertyPath(), violation.getMessage()});
+                }
+            }
+            assertEquals(1, constraintViolations.size());
         }
 
     }
-
-    // TESTES NAMED QUERY    
+   
     @Test
     public void NQCampingSemReservas() {
-        //Busca campings que não tem reserva, ou seja, c.booking is EMPTY
+
         TypedQuery q = em.createNamedQuery("Camping.SemReservas", Camping.class);
         List<Camping> campings = q.getResultList();
-        assertEquals(1, campings.size());
+        assertEquals(2, campings.size());
 
     }
 
@@ -129,12 +131,12 @@ public class CampingTest {
 
     @Test
     public void NQEnderecoPorCidade() {
-        //Busca pelos campings que no address a cidade seja Recife
+
         TypedQuery<Address> q = em.createNamedQuery("Endereco.PorCidade", Address.class);
         q.setParameter(1, "Recife");
         List<Address> a = q.getResultList();
         for (Address endereco : a) {
-            assertEquals("Recife", endereco.getCidade()); //modificar p/ verificar a contagem
+            assertEquals("Recife", endereco.getCidade()); 
         }
     }
 
@@ -143,24 +145,23 @@ public class CampingTest {
         Query q = em.createNamedQuery("Endereco.PorId");
         q.setParameter(1, 1);
         Address a = (Address) q.getSingleResult();
-        assertEquals("51.021-190", a.getCep());
+        assertEquals("51021-190", a.getCep());
     }
 
     @Test
     public void NQEnderecoPorEstado() {
-        //Busca address que estejam registrados com o estado de Pernambuco
+
         TypedQuery<Address> q = em.createNamedQuery("Endereco.PorEstado", Address.class);
         q.setParameter(1, "Pernambuco");
         List<Address> a = q.getResultList();
         for (Address endereco : a) {
-            assertEquals("Pernambuco", endereco.getEstado());//fazer por contagem
+            assertEquals("Pernambuco", endereco.getEstado());
         }
     }
 
-    //TESTES NATIVE QUERY
     @Test
     public void NativeQueryCampingComMaiorInfo() {
-        //Seleciona o nome do camping que tem maior informação
+        
         Query query = em.createNativeQuery("select txt_name from tb_camping "
                 + "group by character_length(TXT_INFO), txt_name "
                 + "order by MAX(char_length(TXT_INFO)) desc limit 1;");
@@ -170,7 +171,7 @@ public class CampingTest {
 
     @Test
     public void NativeQueryCampingPorTelefone() {
-        //Seleciona o telefone do Camping 02
+
         Query q = em.createNativeQuery("SELECT PHONE FROM tb_camping WHERE TXT_NAME LIKE ?");
         q.setParameter(1, "Camping 02");
         String telefone = (String) q.getSingleResult();
@@ -184,7 +185,7 @@ public class CampingTest {
         assertEquals("Camping 05", resultado);
     }
 
-    //TESTES JPQL
+
     @Test
     public void JPQLretornaAddressQueIniciamComR() {
         TypedQuery<Address> query = em.createQuery(
@@ -196,9 +197,9 @@ public class CampingTest {
 
     @Test
     public void JPQLretornaQuantidadeDeCampingsNumEstado() {
-        TypedQuery<Long> query = em.createQuery("SELECT COUNT(c) FROM Camping c WHERE c.address.estado = ?1", Long.class);
+        Query query = em.createQuery("SELECT COUNT(c) FROM Camping c WHERE c.address.estado = ?1", Long.class);
         query.setParameter(1, "São Paulo");
-        long total = query.getSingleResult();
+        long total = (long) query.getSingleResult();
         assertEquals(total, (long) 1);
     }
 
@@ -211,12 +212,18 @@ public class CampingTest {
 
     @Test
     public void JQLupdateCamping() {
-       Query q = em.createQuery("UPDATE Camping c SET c.name = :novonome WHERE c.id = :id");
-       q.setParameter("novonome", "Camping dahora");
-       q.setParameter("id", 4L);
-       
-       q.executeUpdate();
-      //falta teste
+        Query q = em.createQuery("UPDATE Camping c SET c.name = :novonome WHERE c.id = :id");
+        q.setParameter("novonome", "Camping dahora");
+        q.setParameter("id", 4L);
+
+        q.executeUpdate();
+        em.flush();
+
+        Query query = em.createQuery("SELECT c.name FROM Camping c WHERE c.id LIKE :id", String.class);
+        query.setParameter("id", 4L);
+        String c = (String) query.getSingleResult();
+        assertEquals("Camping dahora", c);
+
     }
 
     @Test
@@ -226,15 +233,6 @@ public class CampingTest {
         q.executeUpdate();
 
         assertNull(em.find(Camping.class, (long) 6));
-    }
-
-    @Test
-    public void JPQLallCampings() {
-        //Seleciona todos os campings e os ordena pelo estado
-        TypedQuery<Camping> query = em.createQuery(
-                "SELECT c FROM Camping c ORDER BY c.address.estado", Camping.class);
-        List<Camping> campings = query.getResultList();
-        //assertEquals(5, campings.size());
     }
 
 }

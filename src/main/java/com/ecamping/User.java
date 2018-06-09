@@ -70,8 +70,7 @@ public class User implements Serializable {
     
     @NotNull
     @CPF(message="{invalid.cpf}")
-    @Max(value=17)
-    @Column(name = "TXT_CPF", nullable = false, length = 17, unique = true)
+    @Column(name = "TXT_CPF", nullable = false, length = 14, unique = true)
     private String cpf;
     
     @NotNull

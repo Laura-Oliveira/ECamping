@@ -13,6 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -26,6 +28,14 @@ import javax.validation.constraints.Size;
 @Table(name = "tb_comment")
 @DiscriminatorValue(value = "C")
 @PrimaryKeyJoinColumn(name = "ID_FEEDBACK", referencedColumnName = "ID")
+@NamedQueries(
+    {
+        @NamedQuery(
+                name = "Comment.AllComment",
+                query = "SELECT c FROM Comment c"
+        )
+    }
+)
 public class Comment extends Feedback implements Serializable{
     
     @Size(min=1, max=500)
