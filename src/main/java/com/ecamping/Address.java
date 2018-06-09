@@ -44,7 +44,7 @@ public class Address implements Serializable {
     
     @NotNull
     @Pattern(regexp = "[0-90]{2}.[0-9]{3}-[0-9]{3}", message = "{invalid.cep}")
-    @Column(name= "TXT_CEP", nullable = false, length = 200)
+    @Column(name= "TXT_CEP", nullable = false, length = 10)
     private String cep;
     
     @NotNull
@@ -68,8 +68,6 @@ public class Address implements Serializable {
     @Column(name= "TXT_NUMERO", nullable = false, length = 200)
     private String numero;
 
-    @OneToOne(mappedBy = "address", optional = false)
-    private Camping camping;
     
     public Long getId() {
         return id;
@@ -126,16 +124,5 @@ public class Address implements Serializable {
     public void setNumero(String numero) {
         this.numero = numero;
     }
-
-    public Camping getCamping() {
-        return camping;
-    }
-
-    public void setCamping(Camping camping) {
-        this.camping = camping;
-    }
-    
-    
-    
     
 }

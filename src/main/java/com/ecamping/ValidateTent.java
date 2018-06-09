@@ -21,7 +21,7 @@ import javax.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ValidatorTent.class)
 @Documented
-public  @interface ValidateTent {
+public @interface ValidateTent {
     String message() default "{com.ecamping.Booking.tent}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

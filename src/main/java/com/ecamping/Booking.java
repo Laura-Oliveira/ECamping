@@ -25,6 +25,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -55,7 +56,7 @@ public class Booking implements Serializable {
     @Future(message="{invalid.bookingDate}")
     @Column(name = "DT_BOOKINGDATE")
     @Temporal(TemporalType.DATE)
-    private Calendar bookingDate;
+    private Date bookingDate;
     
     @ValidateTent
     @Column(name = "TXT_TENT", nullable = true)
@@ -77,11 +78,11 @@ public class Booking implements Serializable {
         this.id = id;
     }
 
-    public Calendar getBookingDate() {
+    public Date getBookingDate() {
         return bookingDate;
     }
 
-    public void setBookingDate(Calendar bookingDate) {
+    public void setBookingDate(Date bookingDate) {
         this.bookingDate = bookingDate;
     }
 
@@ -108,7 +109,10 @@ public class Booking implements Serializable {
     public void setTent(String tent) {
         this.tent = tent;
     }
-    
-    
+/*
+    void setBookingDate(Calendar c) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   */
 
 }
